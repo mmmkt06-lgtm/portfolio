@@ -315,8 +315,9 @@
 :where([data-fv="main"]) .ft-top-row{flex-direction:column;gap:48px}
 :where([data-fv="main"]) .ft-logo span{font-size:16px}
 :where([data-fv="main"]) .ft-top-row > nav{width:100%}
-:where([data-fv="main"]) .ft-nav{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;width:100%}
-:where([data-fv="main"]) .ft-bottom{margin-top:56px}
+:where([data-fv="main"]) .ft-nav{display:grid;grid-template-columns:1fr 1fr;gap:17px 32px;width:100%}
+:where([data-fv="main"]) .ft-nav li{padding-bottom:6px;border-bottom:1px solid #333}
+:where([data-fv="main"]) .ft-bottom{margin-top:49px}
 :where([data-fv="main"]) .ct-title{font-size:clamp(28px,8.4cqw,34px)}
 :where([data-fv="main"]) .ct-btn{width:180px;margin-top:48px}
 :where([data-fv="main"]) .wk-cap{grid-template-columns:1fr;row-gap:6px;margin-top:24px}
