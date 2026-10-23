@@ -43,37 +43,22 @@ export default async function WorkDetail({ params }: { params: Promise<Params> }
   return (
     <SiteFrame fv="wdetail" reveal={REVEAL} current="works">
       <main>
-        <section className="wp-hero wd-hero" aria-labelledby="wdTitle">
-          <div className="wp-art" aria-hidden="true">
-            <svg viewBox="0 0 760 520">
-              <circle className="cc" cx="600" cy="120" r="70"></circle>
-              <circle className="ca" cx="300" cy="270" r="190"></circle>
-              <circle className="cb" cx="500" cy="270" r="190"></circle>
-            </svg>
-          </div>
-          <div className="wrap">
-            <p className="sec-label">
-              <span className="sec-ja">制作実績</span>
-            </p>
-            <div className="wp-head">
-              <div>
-                <h1 className="wd-title" id="wdTitle">{work.title}</h1>
-                <div className="wd-tags">
-                  {cats[0] && <span className="wd-cat" lang="en">{cats[0]}</span>}
-                  {work.project && <span className="wd-proj">{work.project}</span>}
-                </div>
-              </div>
-              <ol className="wp-crumb" lang="en">
-                <li><Link href="/">TOP</Link></li>
-                <li><Link href="/works/">WORKS</Link></li>
-                <li aria-current="page">DETAIL</li>
-              </ol>
-            </div>
-          </div>
-        </section>
-
         <section className="cp-sec cp-light wd-main" data-tone="light" aria-label="制作実績の詳細">
+          <nav className="wd-crumb" aria-label="パンくず">
+            <ol lang="en">
+              <li><Link href="/">TOP</Link></li>
+              <li><Link href="/works/">WORKS</Link></li>
+              <li aria-current="page" lang="ja">{work.title}</li>
+            </ol>
+          </nav>
           <div className="wrap">
+            <header className="wd-head">
+              <h1 className="wd-title">{work.title}</h1>
+              <div className="wd-tags">
+                {cats[0] && <span className="wd-cat" lang="en">{cats[0]}</span>}
+                {work.project && <span className="wd-proj">{work.project}</span>}
+              </div>
+            </header>
             {kv && (
               <figure className="wd-kv">
                 <img src={toWebp(kv.url)} width={kv.width} height={kv.height} alt={work.title ?? ""} decoding="async" />
