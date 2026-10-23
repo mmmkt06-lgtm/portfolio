@@ -96,7 +96,7 @@ export default async function Home() {
       <p className="sec-label pf-label" lang="en"><span className="sec-no">02</span><span className="sec-line" aria-hidden="true"></span><span>PROFILE</span></p>
       <div className="pf-text">
       <h2 className="pf-name" id="profileTitle"><span lang="en">NAGATA MIKITO</span><span className="pf-name-ja">永田 幹斗</span></h2>
-      <p className="pf-role" lang="en">WEB / UI DESIGNER</p>
+      <p className="pf-role" lang="en">WEB director / WEB DESIGNER</p>
       <p className="pf-bio">Webディレクター兼デザイナーとして、ヒアリング・情報設計・Webデザイン・制作進行まで幅広く経験。現在はこれまでのデザイン経験に加え、マーケティングを学び、企業・サービスとユーザー双方の視点からデザインを考える力を深めています。</p>
       <Link className="text-link pf-link" href="/about/"><span lang="en">VIEW PROFILE</span><span className="tl-ring" aria-hidden="true"><svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2"></path></svg></span></Link>
       </div>
