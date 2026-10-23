@@ -64,7 +64,7 @@ export default async function Home() {
       <section className="second" aria-labelledby="conceptTitle">
       <div className="wrap concept">
       <div className="c-text">
-      <p className="sec-label" lang="en"><span className="sec-no">01</span><span className="sec-line" aria-hidden="true"></span><span>CONCEPT</span></p>
+      <p className="sec-label"><span lang="en">CONCEPT</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">コンセプト</span></p>
       <h2 className="c-title" id="conceptTitle">異なる価値が交わる場所から、新しい体験を描く。</h2>
       <div className="c-body">
       <p>企業やサービスが伝えたい想いと、ユーザーが求めている価値。</p>
@@ -93,7 +93,7 @@ export default async function Home() {
 
       <section className="profile" id="profile" aria-labelledby="profileTitle">
       <div className="wrap pf">
-      <p className="sec-label pf-label" lang="en"><span className="sec-no">02</span><span className="sec-line" aria-hidden="true"></span><span>PROFILE</span></p>
+      <p className="sec-label pf-label"><span lang="en">ABOUT</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">自己紹介</span></p>
       <div className="pf-text">
       <h2 className="pf-name" id="profileTitle"><span lang="en">NAGATA MIKITO</span><span className="pf-name-ja">永田 幹斗</span></h2>
       <p className="pf-role" lang="en">WEB director / WEB DESIGNER</p>
