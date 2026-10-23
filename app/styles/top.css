@@ -357,4 +357,8 @@
 :where([data-fv="main"]) .ct-title{text-transform:none;font-size:43.6px;line-height:57px}
 :where([data-fv="main"]) .ct-lead{margin-top:13px}
 :where([data-fv="main"]) .ct-btn{margin-top:33px}
+:where([data-fv="main"]) .ct-bg::after{background:rgba(26,26,26,.8)}
+:where([data-fv="main"]) .dg circle,:where([data-fv="main"]) .dg path,:where([data-fv="main"]) .dg line{vector-effect:none}
+:where([data-fv="main"]) .dg-en{font-size:16.25px}
+:where([data-fv="main"]) .dg-ja{font-size:13px}
 }
