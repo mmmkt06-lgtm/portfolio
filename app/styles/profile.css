@@ -152,7 +152,8 @@
 :where([data-fv="profile"]) .wk-client{margin:0;white-space:nowrap;font-family:"Noto Sans JP",sans-serif;font-size:18px;font-weight:500;line-height:22.1px;letter-spacing:.044em;color:#8A8A8A}
 :where([data-fv="profile"]) .wk-body{min-width:0}
 :where([data-fv="profile"]) .wk-title{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;line-height:1.75;letter-spacing:.03em;color:#D9D9D9}
-:where([data-fv="profile"]) .wk-cat{display:inline-flex;margin:14px 0 0;padding:6px 14px;border:1px solid #4D4D4D;border-radius:999px;font-family:"Avenir","Avenir Next",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;color:#D9D9D9}
+:where([data-fv="profile"]) .wk-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+:where([data-fv="profile"]) .wk-cat{display:inline-flex;margin:0;padding:6px 14px;border:1px solid #4D4D4D;border-radius:999px;font-family:"Avenir","Avenir Next",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;color:#D9D9D9}
 :where([data-fv="profile"]) .wk-ctrl{position:absolute;z-index:2;left:calc(var(--w1) + var(--gap));right:var(--wl);top:calc(var(--w2) * var(--ar) + 64px);display:flex;align-items:center;gap:16px;color:#D9D9D9}
 :where([data-fv="profile"]) .wk-btn{box-sizing:border-box;display:grid;place-items:center;flex:none;width:56px;height:56px;padding:0;border:1px solid #6B6B6B;background:transparent;color:#D9D9D9;cursor:pointer;transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease}
 :where([data-fv="profile"]) .wk-btn:hover:not(:disabled),:where([data-fv="profile"]) .wk-btn:focus-visible{background:#D9D9D9;border-color:#D9D9D9;color:#1A1A1A}

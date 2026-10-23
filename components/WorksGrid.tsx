@@ -43,7 +43,11 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
                 <p className="wp-client">{w.client}</p>
                 <div className="wp-body">
                   <h2 className="wp-ttl">{w.title}</h2>
-                  {w.categories[0] && <p className="wp-cat" lang="en">{w.categories[0]}</p>}
+                  {w.categories.length > 0 && (
+                    <ul className="wp-tags" lang="en">
+                      {w.categories.map((c) => <li className="wp-cat" key={c}>{c}</li>)}
+                    </ul>
+                  )}
                 </div>
               </div>
             </Link>

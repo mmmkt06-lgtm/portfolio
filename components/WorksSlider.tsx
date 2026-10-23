@@ -19,7 +19,7 @@ export default function WorksSlider({ works }: { works: Work[] }) {
           <ul className="wk-track">
             {works.map((w) => {
               const img = workThumb(w);
-              const cat = toTagArray(w.category)[0];
+              const cats = toTagArray(w.category);
               return (
                 <li className="wk-slide" key={w.id}>
                   <Link className="wk-card" href={`/works/${w.id}/`}>
@@ -37,7 +37,11 @@ export default function WorksSlider({ works }: { works: Work[] }) {
                       <p className="wk-client">{w.client}</p>
                       <div className="wk-body">
                         <h3 className="wk-title">{w.title}</h3>
-                        {cat && <p className="wk-cat" lang="en">{cat}</p>}
+                        {cats.length > 0 && (
+                          <ul className="wk-tags" lang="en">
+                            {cats.map((c) => <li className="wk-cat" key={c}>{c}</li>)}
+                          </ul>
+                        )}
                       </div>
                     </div>
                   </Link>
