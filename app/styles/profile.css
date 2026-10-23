@@ -290,9 +290,10 @@
 :where([data-fv="profile"]) .page{--hd:64px;--zoom-len:120svh}
 :where([data-fv="profile"]) .hd .nav{display:none}
 :where([data-fv="profile"]) .menu-btn{display:inline-flex}
-:where([data-fv="profile"]) .logo{gap:10px}
-:where([data-fv="profile"]) .logo svg{width:30px;height:20px}
-:where([data-fv="profile"]) .logo-word{font-size:16px}
+:where([data-fv="profile"]) .logo{gap:12px}
+:where([data-fv="profile"]) .logo svg{width:36px;height:24px}
+:where([data-fv="profile"]) .logo-word{font-size:19.2px}
+:where([data-fv="profile"]) .hd .menu-btn{margin-right:8px}
 :where([data-fv="profile"]) .fv-body{padding-top:calc(var(--hd) + 32px)}
 :where([data-fv="profile"]) .fv-copy h1 .en-big{font-size:clamp(40px,11.4cqw,48px);line-height:1.02;letter-spacing:-.01em}
 :where([data-fv="profile"]) .fv-copy h1 .ja{font-size:14px;font-weight:400;line-height:1.6;letter-spacing:.12em}

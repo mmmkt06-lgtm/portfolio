@@ -143,7 +143,7 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
                   aria-label="メニューを開く" aria-expanded={menuOpen} aria-controls="spMenu"
                   onClick={() => setMenuOpen(true)}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9h18M3 15h18" stroke="currentColor" strokeWidth="1.5" /></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M0 8h24M0 16h24" stroke="currentColor" strokeWidth="1.75" /></svg>
                 </button>
               </div>
             </header>
