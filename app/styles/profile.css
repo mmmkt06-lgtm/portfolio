@@ -579,3 +579,13 @@
 :where([data-fv="profile"]) .wp-art{opacity:1}
 :where([data-fv="profile"]) .wp-art circle{vector-effect:none}
 }
+
+/* SP contact CTA: same as the Figma Contact CTA / SP component */
+@container (max-width: 767px){
+:where([data-fv="profile"]) .contact{padding-block:106px 86px}
+:where([data-fv="profile"]) .contact .sec-label{margin-bottom:45px}
+:where([data-fv="profile"]) .ct-title{text-transform:none;font-size:43.6px;line-height:57px}
+:where([data-fv="profile"]) .ct-lead{margin-top:13px}
+:where([data-fv="profile"]) .ct-btn{margin-top:33px}
+:where([data-fv="profile"]) .ct-bg::after{background:rgba(26,26,26,.8)}
+}
