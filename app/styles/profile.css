@@ -589,3 +589,25 @@
 :where([data-fv="profile"]) .ct-btn{margin-top:33px}
 :where([data-fv="profile"]) .ct-bg::after{background:rgba(26,26,26,.8)}
 }
+
+/* Profile: aligned with the Figma Profile frames */
+:where([data-fv="profile"]) .pr-ring{z-index:0}
+:where([data-fv="profile"]) .pr-img{position:relative;z-index:1}
+@container (min-width: 768px){
+:where([data-fv="profile"]) .pr-sk-row{padding-bottom:36.5px}
+:where([data-fv="profile"]) .pr-sk-ttl{margin-top:6.5px}
+:where([data-fv="profile"]) .pr-sk-en{margin-top:2px}
+:where([data-fv="profile"]) .pr-sk-do{padding-top:3px}
+:where([data-fv="profile"]) .pr-sk .pr-sk-meta .pr-k{margin-bottom:5.5px}
+}
+@container (max-width: 767px){
+:where([data-fv="profile"]) .pr-intro{position:relative}
+:where([data-fv="profile"]) .pr-intro-sec{padding-bottom:67.5px}
+:where([data-fv="profile"]) .pr-text .sec-label{position:absolute;right:0;top:0;margin:0;writing-mode:vertical-rl;text-orientation:sideways}
+:where([data-fv="profile"]) .pr-text{margin-top:44.3px}
+:where([data-fv="profile"]) .pr-bio-wrap{margin-top:23px}
+:where([data-fv="profile"]) .pr-sk .pr-sk-row{padding-bottom:25px}
+:where([data-fv="profile"]) .pr-sk-do{margin-top:19.5px}
+:where([data-fv="profile"]) .pr-sk-meta{margin-top:36.7px;gap:0}
+:where([data-fv="profile"]) .pr-sk .pr-sk-meta .pr-k{margin-bottom:0;line-height:14px}
+}
