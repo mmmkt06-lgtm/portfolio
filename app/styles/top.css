@@ -125,11 +125,12 @@
 :where([data-fv="main"]) .pf[data-in="0"] .pf-ring{opacity:0;transform:translate(-36%,-28%)}
 
 /* WORKS: slider. Top half light, a dark band rises behind the lower half of the slides */
-:where([data-fv="main"]) .works{position:relative;z-index:2;background:#D9D9D9;color:#1A1A1A;--vl:rgba(26,26,26,.06);padding-top:clamp(120px,12cqw,180px);
+:where([data-fv="main"]) .works{position:relative;z-index:2;background:#EAEAEA;color:#1A1A1A;--vl:rgba(26,26,26,.06);padding-top:clamp(120px,12cqw,180px);
   --wl:calc((100cqw - min(1200px, 100cqw - 2 * clamp(20px,4cqw,48px))) / 2);
   --w1:clamp(320px,42cqw,600px);--w2:clamp(220px,26.5cqw,380px);--gap:clamp(24px,4cqw,56px);--ar:.75}
 :where([data-fv="main"]) .works a{color:inherit}
 :where([data-fv="main"]) .wk-head{margin-bottom:clamp(48px,5cqw,72px)}
+:where([data-fv="main"]) .wk-head .sec-no,:where([data-fv="main"]) .wk-head .sec-line{display:none}
 :where([data-fv="main"]) .wk-head .sec-label{margin-bottom:0;font-weight:500}
 :where([data-fv="main"]) .sec-bar{color:#4D4D4D;font-weight:400}
 :where([data-fv="main"]) .sec-ja{font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:500;letter-spacing:.08em}
@@ -258,6 +259,7 @@
 
 /* Tablet: stack, art below copy, the pair of circles centred */
 @container (max-width: 1023px){
+:where([data-fv="main"]) .works{background:#D9D9D9}
 :where([data-fv="main"]) .nav{gap:28px}
 :where([data-fv="main"]) .fv-body{justify-content:flex-start;padding-top:calc(var(--hd) + 40px)}
 :where([data-fv="main"]) .fv-copy{padding-bottom:0}
