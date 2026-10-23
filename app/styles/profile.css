@@ -570,3 +570,12 @@
 }
 :where([data-fv="profile"]) .tl-head{gap:0}
 :where([data-fv="profile"]) .tl-head .pr-sk-ttl{margin:0}
+
+/* SP hero: same design as the Concept / SP frame in Figma */
+@container (max-width: 767px){
+:where([data-fv="profile"]) .wp-hero:not(.wd-hero){padding:126px 0 18.3px}
+:where([data-fv="profile"]) .wp-hero:not(.wd-hero) .sec-label{margin-bottom:38px}
+:where([data-fv="profile"]) .wp-hero:not(.wd-hero) .wp-head{flex-direction:column;align-items:flex-start;gap:90px}
+:where([data-fv="profile"]) .wp-art{opacity:1}
+:where([data-fv="profile"]) .wp-art circle{vector-effect:none}
+}

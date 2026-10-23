@@ -46,6 +46,14 @@ export default async function Concept() {
       <g className="gM"><text className="t-in-v" x="600" y="198" textAnchor="middle">VALUE</text><text className="t-in-ja" x="600" y="224" textAnchor="middle">双方が重なり合う</text><text className="t-in-ja" x="600" y="242" textAnchor="middle">接点</text>
       <line className="cp-drop" x1="600" y1="352" x2="600" y2="392"></line><circle className="cp-dot" cx="600" cy="400" r="5"></circle><text className="t-en t-ne" x="600" y="432" textAnchor="middle">NEW EXPERIENCE</text><text className="t-ja t-ne-ja" x="600" y="458" textAnchor="middle">接点から生まれる新しい体験</text></g>
       </svg>
+      <svg className="cp-svg-sp" viewBox="290 10 620 503" role="img" aria-hidden="true" focusable="false">
+      <defs><clipPath id="cpClipS"><circle className="gL" cx="480" cy="200" r="190"></circle></clipPath></defs>
+      <g className="gM"><g style={{ clipPath: "url(#cpClipS)" }}><circle className="cp-lens gR" cx="720" cy="200" r="190"></circle></g></g>
+      <g className="gL"><circle className="o" cx="480" cy="200" r="190"></circle><text className="s-en" x="429" y="175" textAnchor="middle">BRAND</text><text className="s-ja" x="428" y="236" textAnchor="middle">企業・サービス</text><text className="s-ja" x="428" y="265" textAnchor="middle">の想いや強み</text></g>
+      <g className="gR"><circle className="o" cx="720" cy="200" r="190"></circle><text className="s-en" x="771" y="175" textAnchor="middle">USER</text><text className="s-ja" x="776" y="225" textAnchor="middle">ユーザーの</text><text className="s-ja" x="776" y="254" textAnchor="middle">ニーズや課題</text></g>
+      <g className="gM"><text className="s-v" x="600" y="178" textAnchor="middle">VALUE</text><text className="s-vja" x="600" y="240" textAnchor="middle">接点</text>
+      <line className="cp-drop" x1="600" y1="352" x2="600" y2="392"></line><circle className="cp-dot" cx="600" cy="400" r="5"></circle><text className="s-en" x="601" y="464" textAnchor="middle">NEW EXPERIENCE</text><text className="s-ja" x="600" y="508" textAnchor="middle">接点から生まれる新しい体験</text></g>
+      </svg>
       <dl className="cp-legend">
       <div><dt lang="en">BRAND</dt><dd>企業・サービスの想いや強み</dd></div>
       <div><dt lang="en">USER</dt><dd>ユーザーのニーズや課題</dd></div>

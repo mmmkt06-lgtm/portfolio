@@ -404,3 +404,12 @@
 :where([data-fv="works"]) .wp-crumb{margin:0}
 }
 @media (prefers-reduced-motion: reduce){:where([data-fv="works"]) .wp-art circle{animation:none}}
+
+/* SP hero: same design as the Concept / SP frame in Figma */
+@container (max-width: 767px){
+:where([data-fv="works"]) .wp-hero:not(.wd-hero){padding:126px 0 18.3px}
+:where([data-fv="works"]) .wp-hero:not(.wd-hero) .sec-label{margin-bottom:38px}
+:where([data-fv="works"]) .wp-hero:not(.wd-hero) .wp-head{flex-direction:column;align-items:flex-start;gap:90px}
+:where([data-fv="works"]) .wp-art{opacity:1}
+:where([data-fv="works"]) .wp-art circle{vector-effect:none}
+}

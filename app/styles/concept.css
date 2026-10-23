@@ -497,7 +497,44 @@
 :where([data-fv="concept"]) .cp-steps::before,:where([data-fv="concept"]) .cp-steps::after{display:none}
 :where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring{margin-top:0}
 :where([data-fv="concept"]) .cp-step:not(:last-child)::after{content:"";position:absolute;left:calc(min(240px,70%) / 2 - 6px);bottom:-52px;width:12px;height:42px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='42' viewBox='0 0 12 42' fill='none' stroke='%236B6B6B'%3E%3Cpath d='M6 0v38' stroke-dasharray='3 3'/%3E%3Cpath d='M1 33l5 5 5-5'/%3E%3C/svg%3E") no-repeat center/contain}
+/* SP: aligned with the Figma Concept / SP frame */
+:where([data-fv="concept"]) .wp-hero{padding:126px 0 18.3px}
+:where([data-fv="concept"]) .wp-hero .sec-label{margin-bottom:38px}
+:where([data-fv="concept"]) .wp-head{flex-direction:column;align-items:flex-start;gap:90px}
+:where([data-fv="concept"]) .wp-art{opacity:1}
+:where([data-fv="concept"]) .wp-art circle{vector-effect:none}
+:where([data-fv="concept"]) .cp-msg{padding-bottom:92px}
+:where([data-fv="concept"]) .cp-fig{margin-top:62px}
+:where([data-fv="concept"]) .cp-fig > svg:not(.cp-svg-sp){display:none}
+:where([data-fv="concept"]) .cp-fig > .cp-svg-sp{display:block;width:100%;height:auto;overflow:visible}
+:where([data-fv="concept"]) .cp-legend{display:none}
+:where([data-fv="concept"]) .cp-proc{padding-bottom:86px}
+:where([data-fv="concept"]) .cp-proc .sec-label{margin-bottom:44px}
+:where([data-fv="concept"]) .cp-proc-ja{font-size:24.3px;line-height:34.9px;letter-spacing:.057em}
+:where([data-fv="concept"]) .cp-proc .cp-head .cp-p{margin-top:18px}
+:where([data-fv="concept"]) .cp-steps{padding-top:2.4px;row-gap:102px}
+:where([data-fv="concept"]) .cp-ring,:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring,:where([data-fv="concept"]) .cp-step:nth-child(3) .cp-ring{width:min(240px,70%);margin-inline:auto}
+:where([data-fv="concept"]) .cp-step:not(:last-child)::after{left:calc(50% - 6px);bottom:-72px}
+:where([data-fv="concept"]) .cp-step-body{margin-top:16px}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-step-body{margin-top:24px}
+:where([data-fv="concept"]) .cp-step:nth-child(3) .cp-step-body{margin-top:23px}
+:where([data-fv="concept"]) .cp-step-body .cp-p{margin-top:17px}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-step-body .cp-p{margin-top:18px}
+:where([data-fv="concept"]) .cp-ex{margin-top:13px;padding:15px 0 5px}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ex{margin-top:16px;padding-bottom:10px}
+:where([data-fv="concept"]) .cp-step:nth-child(3) .cp-ex{padding-bottom:9px}
+:where([data-fv="concept"]) .cp-ex-k{line-height:13px;margin-bottom:12px}
+:where([data-fv="concept"]) .cp-tags{row-gap:11px}
+:where([data-fv="concept"]) .cp-tags li{padding:4.5px 14px;line-height:17px}
+:where([data-fv="concept"]) .cp-note{margin-top:49px}
 :where([data-fv="concept"]) .cp-rel{padding-block:80px}
 :where([data-fv="concept"]) .cp-rel-in{flex-direction:column;align-items:flex-start}
 }
+:where([data-fv="concept"]) .cp-svg-sp{display:none}
+:where([data-fv="concept"]) .cp-svg-sp text{text-anchor:middle}
+:where([data-fv="concept"]) .cp-svg-sp circle,:where([data-fv="concept"]) .cp-svg-sp line{vector-effect:none}
+:where([data-fv="concept"]) .cp-svg-sp .s-en{font-family:"Avenir","Avenir Next",sans-serif;font-size:27.9px;font-weight:500;letter-spacing:.054em;fill:#1A1A1A}
+:where([data-fv="concept"]) .cp-svg-sp .s-ja{font-family:"Noto Sans JP",sans-serif;font-size:24.1px;letter-spacing:.043em;fill:#4D4D4D}
+:where([data-fv="concept"]) .cp-svg-sp .s-v{font-family:"Avenir","Avenir Next",sans-serif;font-size:27.9px;font-weight:500;letter-spacing:.097em;fill:#D9D9D9}
+:where([data-fv="concept"]) .cp-svg-sp .s-vja{font-family:"Noto Sans JP",sans-serif;font-size:25px;letter-spacing:.02em;fill:#D9D9D9}
 :where([data-fv="concept"]) .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
