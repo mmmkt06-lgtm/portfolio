@@ -21,13 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return { title: work.title, description: work.subtitle };
 }
 
-const Arrow = ({ d }: { d: string }) => (
-  <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true"><path d={d} stroke="currentColor" strokeWidth="1.1" /></svg>
-);
-
 export default async function WorkDetail({ params }: { params: Promise<Params> }) {
   const { id } = await params;
-  const [work, all] = await Promise.all([getWork(id), getWorks()]);
+  const work = await getWork(id);
   if (!work) notFound();
 
   const cats = toTagArray(work.category);
@@ -36,9 +32,6 @@ export default async function WorkDetail({ params }: { params: Promise<Params> }
   const kv = work.hero_image ?? workThumb(work);
   const gallery = work.image ?? [];
   const url = work.siteUrl && /^https?:\/\//.test(work.siteUrl) ? work.siteUrl : null;
-  const i = all.findIndex((w) => w.id === id);
-  const prev = i > 0 ? all[i - 1] : null;
-  const next = i >= 0 && i < all.length - 1 ? all[i + 1] : null;
 
   return (
     <SiteFrame fv="wdetail" reveal={REVEAL} current="works">
@@ -97,20 +90,8 @@ export default async function WorkDetail({ params }: { params: Promise<Params> }
                 ))}
               </ul>
             )}
-            <nav className="wd-pager" aria-label="ほかの制作実績">
-              {prev ? (
-                <Link className="wd-pg prev" href={`/works/${prev.id}/`}>
-                  <span lang="en"><Arrow d="M18 5H1M5 1L1 5l4 4" />PREV</span>
-                  <b>{prev.title}</b>
-                </Link>
-              ) : <span />}
+            <nav className="wd-pager" aria-label="制作実績一覧へ">
               <Link className="wd-back" href="/works/" lang="en">ALL<br />WORKS</Link>
-              {next ? (
-                <Link className="wd-pg next" href={`/works/${next.id}/`}>
-                  <span lang="en">NEXT<Arrow d="M0 5h17M13 1l4 4-4 4" /></span>
-                  <b>{next.title}</b>
-                </Link>
-              ) : <span />}
             </nav>
           </div>
         </section>
