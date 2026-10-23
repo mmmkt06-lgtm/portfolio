@@ -36,6 +36,15 @@ function LogoMark({ style }: { style?: React.CSSProperties }) {
   );
 }
 
+/** 要素（または最も近い祖先）の不透明な背景色。見つからなければ空文字 */
+function solidBg(el: HTMLElement | null) {
+  for (; el; el = el.parentElement) {
+    const c = getComputedStyle(el).backgroundColor;
+    if (c && c !== "transparent" && !/rgba\(.*,\s*0\)$/.test(c)) return c;
+  }
+  return "";
+}
+
 export default function SiteFrame({ fv, mode = "tone", reveal = [], current, children }: Props) {
   const rootRef = useRef<HTMLDivElement>(null);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
@@ -58,12 +67,16 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
       // ヘッダーは、明るい区間が下にある間だけ暗色にする
       const lights = Array.from(root.querySelectorAll<HTMLElement>('[data-tone="light"]'));
       const band = root.querySelector(".wk-band");
-      let last: boolean | undefined, raf = 0;
+      let last: boolean | undefined, lastBg = "", raf = 0;
       const update = () => {
         const sc = root.getBoundingClientRect().width / (root.offsetWidth || 1) || 1;
         const hd = parseFloat(getComputedStyle(root).getPropertyValue("--hd")) || 100;
-        let next = lights.some((el) => { const b = el.getBoundingClientRect(); return b.top / sc <= hd && b.bottom / sc > hd; });
+        const under = lights.find((el) => { const b = el.getBoundingClientRect(); return b.top / sc <= hd && b.bottom / sc > hd; });
+        let next = !!under;
         if (next && band && band.getBoundingClientRect().top / sc <= hd) next = false;
+        // ヘッダーの背景は、下にある明るい区間の背景色に合わせる
+        const bg = next && under ? solidBg(under) : "";
+        if (bg !== lastBg) { lastBg = bg; if (bg) root.style.setProperty("--hd-bg", bg); }
         if (next !== last) { last = next; setLit(next); }
       };
       const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };

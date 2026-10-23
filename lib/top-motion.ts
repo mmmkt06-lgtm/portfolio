@@ -82,6 +82,8 @@ export function initTopMotion(root: HTMLElement, setLit: (lit: boolean) => void)
     if (top(profile) <= hd) next = false;
     if (top(works) <= hd) next = true;
     if (top(band) <= hd) next = false;
+    const lightEl = top(works) <= hd ? works : second;
+    if (next && lightEl) root.style.setProperty("--hd-bg", getComputedStyle(lightEl).backgroundColor);
     if (next !== lit) { lit = next; setLit(next); }
   };
   const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
