@@ -350,8 +350,8 @@
 :where([data-fv="main"]) .wk-cap{row-gap:20px}
 :where([data-fv="main"]) .wk-client{font-size:20px;line-height:22.1px;letter-spacing:.039em}
 :where([data-fv="main"]) .wk-tags{margin-top:8px}
-:where([data-fv="main"]) .wk-ctrl{margin-top:0}
-:where([data-fv="main"]) .wk-stage{padding-bottom:136px}
+:where([data-fv="main"]) .wk-ctrl{margin-top:37px}
+:where([data-fv="main"]) .wk-stage{padding-bottom:99px}
 :where([data-fv="main"]) .contact{padding-block:106px}
 :where([data-fv="main"]) .contact .sec-label{margin-bottom:45px}
 :where([data-fv="main"]) .ct-title{text-transform:none;font-size:43.6px;line-height:57px}
