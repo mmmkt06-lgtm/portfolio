@@ -13,10 +13,12 @@ export type WorkCard = {
 
 const pad = (n: number) => String(n).padStart(2, "0");
 const PER_PAGE = 6;
+/** 絞り込みに出すカテゴリー（Figmaのデザイン準拠。Direction / Design 等は表示タグのみ） */
+const FILTERS = ["Graphic design", "Special site", "Web site", "LP"];
 
 /** WORKS一覧：カテゴリーで絞り込み（カテゴリーは実データから生成） */
 export default function WorksGrid({ works }: { works: WorkCard[] }) {
-  const cats = Array.from(new Set(works.flatMap((w) => w.categories)));
+  const cats = FILTERS.filter((c) => works.some((w) => w.categories.includes(c)));
   const [cat, setCat] = useState("ALL");
   const [page, setPage] = useState(1);
   const topRef = useRef<HTMLDivElement>(null);
@@ -41,7 +43,7 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
             </li>
           ))}
         </ul>
-        <p className="wp-count" lang="en" aria-live="polite"><b data-n={pad(shown.length)}></b> WORKS</p>
+        <p className="wp-count" lang="en" aria-live="polite"><b data-n={pad(shown.length)}></b> 件</p>
       </div>
       <ul className="wp-grid">
         {visible.map((w) => (

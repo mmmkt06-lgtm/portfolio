@@ -436,6 +436,7 @@
 :where([data-fv="works"]) .wp-pg-arrow:hover:not(:disabled),:where([data-fv="works"]) .wp-pg-arrow:focus-visible{background:#1A1A1A;border-color:#1A1A1A;color:#D9D9D9}
 :where([data-fv="works"]) .wp-pg-arrow:disabled{opacity:.3;cursor:default}
 @container (max-width: 767px){
+:where([data-fv="works"]) .wp-bar{padding-bottom:16.5px}
 :where([data-fv="works"]) .wp-pager{margin-top:64px;gap:8px}
 :where([data-fv="works"]) .wp-pg-arrow{width:44px;height:44px}
 :where([data-fv="works"]) .wp-pg-list{gap:0}
