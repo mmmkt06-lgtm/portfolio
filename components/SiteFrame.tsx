@@ -1,0 +1,183 @@
+"use client";
+
+import Link from "next/link";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { initTopMotion, initWorksSlider } from "@/lib/top-motion";
+
+type Frame = { paused: boolean; togglePaused: () => void };
+const FrameContext = createContext<Frame>({ paused: false, togglePaused: () => {} });
+export const useFrame = () => useContext(FrameContext);
+
+type Props = {
+  /** CSSのスコープ名（data-fv） */
+  fv: string;
+  /** "top" はFVのズーム演出で、それ以外は data-tone="light" の区間でヘッダーを切り替える */
+  mode?: "top" | "tone";
+  /** スクロールで現れる要素 [セレクタ, しきい値] */
+  reveal?: [string, number][];
+  /** 現在のページ（ナビの aria-current） */
+  current?: "concept" | "about" | "works" | "contact";
+  children: React.ReactNode;
+};
+
+const NAV = [
+  { key: "concept", href: "/concept/", en: "CONCEPT", ja: "考え方" },
+  { key: "about", href: "/about/", en: "PROFILE", ja: "プロフィール" },
+  { key: "works", href: "/works/", en: "WORKS", ja: "制作実績" },
+  { key: "contact", href: "/contact/", en: "CONTACT", ja: "お問い合わせ" },
+] as const;
+
+function LogoMark({ style }: { style?: React.CSSProperties }) {
+  return (
+    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-hidden="true" style={style}>
+      <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="26" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+export default function SiteFrame({ fv, mode = "tone", reveal = [], current, children }: Props) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const [lit, setLit] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const revealKey = JSON.stringify(reveal);
+  const togglePaused = useCallback(() => setPaused((p) => !p), []);
+  const closeMenu = useCallback(() => { setMenuOpen(false); menuBtnRef.current?.focus(); }, []);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const reduce = !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const cleanups: (() => void)[] = [];
+
+    if (mode === "top") {
+      cleanups.push(initTopMotion(root, setLit));
+    } else {
+      // ヘッダーは、明るい区間が下にある間だけ暗色にする
+      const lights = Array.from(root.querySelectorAll<HTMLElement>('[data-tone="light"]'));
+      const band = root.querySelector(".wk-band");
+      let last: boolean | undefined, raf = 0;
+      const update = () => {
+        const sc = root.getBoundingClientRect().width / (root.offsetWidth || 1) || 1;
+        const hd = parseFloat(getComputedStyle(root).getPropertyValue("--hd")) || 100;
+        let next = lights.some((el) => { const b = el.getBoundingClientRect(); return b.top / sc <= hd && b.bottom / sc > hd; });
+        if (next && band && band.getBoundingClientRect().top / sc <= hd) next = false;
+        if (next !== last) { last = next; setLit(next); }
+      };
+      const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+      window.addEventListener("scroll", on, { passive: true, capture: true });
+      window.addEventListener("resize", on);
+      update();
+      cleanups.push(() => {
+        cancelAnimationFrame(raf);
+        window.removeEventListener("scroll", on, { capture: true });
+        window.removeEventListener("resize", on);
+      });
+    }
+
+    // 初回表示のフェードイン（JSが無効でも内容は読める：data-in を付けるのはJS実行後のみ）
+    if (!reduce && "IntersectionObserver" in window) {
+      const sel: [string, number][] = [...reveal, [".wk-stage", 0.15], [".ct", 0.25]];
+      sel.forEach(([s, th]) => {
+        const el = root.querySelector(s);
+        if (!el) return;
+        el.setAttribute("data-in", "0");
+        const io = new IntersectionObserver((en) => {
+          if (en[0].isIntersecting) { el.setAttribute("data-in", "1"); io.disconnect(); }
+        }, { threshold: th });
+        io.observe(el);
+        cleanups.push(() => io.disconnect());
+      });
+    }
+
+    cleanups.push(initWorksSlider(root));
+
+    const pt = root.querySelector<HTMLElement>(".ft-pt");
+    const toTop = () => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    pt?.addEventListener("click", toTop);
+    cleanups.push(() => pt?.removeEventListener("click", toTop));
+
+    return () => cleanups.forEach((fn) => fn());
+  }, [mode, revealKey]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMenu(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menuOpen, closeMenu]);
+
+  const cls = ["page", paused ? "is-paused" : "", lit ? "is-lit" : ""].filter(Boolean).join(" ");
+
+  return (
+    <FrameContext.Provider value={{ paused, togglePaused }}>
+      <div data-fv={fv}>
+        <div className={cls} ref={rootRef} style={{ "--dur": "14s" } as React.CSSProperties}>
+          <div className="hd-sticky">
+            <header className="hd">
+              <div className="hd-in">
+                {/* TODO: 正式なロゴ／名前が届いたら差し替える（現在は仮ロゴ） */}
+                <Link className="logo" href="/" aria-label="ホーム（ロゴは仮）">
+                  <LogoMark />
+                  <span className="logo-word" aria-hidden="true">LOGO</span>
+                </Link>
+                <nav aria-label="メインナビゲーション">
+                  <ul className="nav">
+                    {NAV.map((n) => (
+                      <li key={n.key}>
+                        <Link
+                          className={n.key === "contact" ? "pill" : undefined}
+                          href={n.href}
+                          aria-current={current === n.key ? "page" : undefined}
+                        >
+                          {n.en}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                <button
+                  className="menu-btn" type="button" ref={menuBtnRef}
+                  aria-label="メニューを開く" aria-expanded={menuOpen} aria-controls="spMenu"
+                  onClick={() => setMenuOpen(true)}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9h18M3 15h18" stroke="currentColor" strokeWidth="1.5" /></svg>
+                </button>
+              </div>
+            </header>
+            {menuOpen && (
+              <div className="sp-menu" id="spMenu" role="dialog" aria-modal="true" aria-label="メニュー">
+                <div className="wrap">
+                  <div className="sp-menu-hd">
+                    <Link className="logo" href="/" aria-label="ホーム（ロゴは仮）" onClick={() => setMenuOpen(false)}>
+                      <LogoMark style={{ width: 30, height: 20 }} />
+                      <span className="logo-word" aria-hidden="true" style={{ fontSize: 16 }}>LOGO</span>
+                    </Link>
+                    <button className="menu-btn" type="button" aria-label="メニューを閉じる" onClick={closeMenu} style={{ display: "inline-flex" }} autoFocus>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" strokeWidth="1.5" /></svg>
+                    </button>
+                  </div>
+                  <nav aria-label="メニュー">
+                    <ul className="sp-nav">
+                      <li><Link href="/" onClick={() => setMenuOpen(false)}>TOP<span>トップ</span></Link></li>
+                      {NAV.map((n) => (
+                        <li key={n.key}>
+                          <Link href={n.href} aria-current={current === n.key ? "page" : undefined} onClick={() => setMenuOpen(false)}>
+                            {n.en}<span>{n.ja}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            )}
+          </div>
+          {children}
+        </div>
+      </div>
+    </FrameContext.Provider>
+  );
+}

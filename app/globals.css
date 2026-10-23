@@ -1,0 +1,13 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #1A1A1A; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* microCMSの実画像をサムネイル枠に収める */
+.wk-thumb img, .wp-thumb img { transition: transform .9s cubic-bezier(.22, .61, .36, 1); }
+:where([data-fv]) .wk-slide[data-active] .wk-card:hover .wk-thumb img,
+:where([data-fv]) .wk-slide[data-active] .wk-card:focus-visible .wk-thumb img,
+:where([data-fv]) .wp-card:hover .wp-thumb img,
+:where([data-fv]) .wp-card:focus-visible .wp-thumb img { transform: scale(1.04); }
+
+.wp-thumb img, .wd-kv img, .wd-gal img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.wd-gal img { object-fit: contain; background: #EDEDED; }

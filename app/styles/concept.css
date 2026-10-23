@@ -1,0 +1,499 @@
+
+:where([data-fv="concept"]) a{color:#FFFFFF}:where([data-fv="concept"]) a:hover{color:#FFFFFF}
+:where([data-fv="concept"]) .page{--hd:100px;--sec-top:124px;--zoom-len:150svh;position:relative;color:#FFFFFF;font-family:"Avenir","Avenir Next","Noto Sans JP",sans-serif;container-type:inline-size;-webkit-font-smoothing:antialiased;isolation:isolate;overflow-x:clip}
+:where([data-fv="concept"]) .wrap{--g:clamp(20px,4cqw,48px);width:min(1200px,calc(100% - var(--g) * 2));margin-inline:auto;box-sizing:border-box}
+:where([data-fv="concept"]) .page :focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* Header: pinned to the top of the page, turns dark once the page turns light */
+:where([data-fv="concept"]) .hd-sticky{position:sticky;top:0;height:0;z-index:50}
+:where([data-fv="concept"]) .hd{position:absolute;top:0;left:0;right:0;transition:background-color .35s ease}
+:where([data-fv="concept"]) .hd-in{box-sizing:border-box;width:100%;height:var(--hd);padding-inline:clamp(20px,4.9cqw,70px);display:flex;align-items:center;justify-content:space-between}
+:where([data-fv="concept"]) .logo{display:inline-flex;align-items:center;gap:14px;min-height:44px;text-decoration:none;color:#FFFFFF;transition:color .35s ease}
+:where([data-fv="concept"]) .logo svg{display:block;flex:none}
+:where([data-fv="concept"]) .logo-word{font-size:20px;font-weight:500;letter-spacing:.34em;line-height:1}
+:where([data-fv="concept"]) .nav{display:flex;align-items:center;gap:42px;margin:0;padding:0;list-style:none}
+:where([data-fv="concept"]) .nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:400;letter-spacing:.05em;text-decoration:none;color:#FFFFFF;transition:color .35s ease,background-color .25s,border-color .35s ease}
+:where([data-fv="concept"]) .nav a::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+:where([data-fv="concept"]) .nav a:hover::after{transform:scaleX(1)}
+:where([data-fv="concept"]) .nav a.pill{box-sizing:border-box;min-height:45px;padding:0 35px;border:1px solid #FFFFFF;border-radius:999px;justify-content:center}
+:where([data-fv="concept"]) .nav a.pill::after{display:none}
+:where([data-fv="concept"]) .nav a.pill:hover{background:#FFFFFF;color:#1A1A1A}
+:where([data-fv="concept"]) .menu-btn{display:none;width:44px;height:44px;margin-right:-10px;padding:0;border:0;background:transparent;color:#FFFFFF;cursor:pointer;align-items:center;justify-content:center;transition:color .35s ease}
+:where([data-fv="concept"]) .is-lit .hd{background:#D9D9D9}
+:where([data-fv="concept"]) .is-lit .logo,:where([data-fv="concept"]) .is-lit .nav a,:where([data-fv="concept"]) .is-lit .menu-btn{color:#1A1A1A}
+:where([data-fv="concept"]) .is-lit .nav a.pill{border-color:#1A1A1A}
+:where([data-fv="concept"]) .is-lit .nav a.pill:hover{background:#1A1A1A;color:#D9D9D9}
+
+/* Zoom track: the stage stays pinned while the page scrolls through the zoom */
+:where([data-fv="concept"]) .zoom{position:relative;height:calc(100svh + var(--zoom-len))}
+:where([data-fv="concept"]) .stage{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;background:#1A1A1A}
+:where([data-fv="concept"]) .lit-bg{position:absolute;inset:0;z-index:3;background:#D9D9D9;opacity:0;pointer-events:none}
+
+/* FV: statement at the lower left */
+:where([data-fv="concept"]) .fv-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;min-height:0}
+:where([data-fv="concept"]) .fv-copy{position:relative;z-index:2;padding-bottom:clamp(96px,7.22cqw,140px)}
+:where([data-fv="concept"]) .copy-inner{max-width:none}
+:where([data-fv="concept"]) .fv h1,:where([data-fv="concept"]) .fv-copy h1{margin:0;color:#FFFFFF}
+:where([data-fv="concept"]) .fv-copy h1 .ja{display:block;width:fit-content;margin:0 0 1.2em .12em;font-family:"Noto Sans JP",sans-serif;font-size:clamp(16px,1.6cqw,23px);font-weight:700;line-height:1.75;letter-spacing:.176em;color:#E6E6E6;animation:rise .8s cubic-bezier(.22,.61,.36,1) .15s both}
+:where([data-fv="concept"]) .fv-copy h1 .en-big{display:block;font-family:"Avenir","Avenir Next","Noto Sans JP",sans-serif;font-size:clamp(44px,9.51cqw,150px);font-weight:500;line-height:1.07;letter-spacing:.0132em;color:#FFFFFF}
+:where([data-fv="concept"]) .fv-copy .en-sub{margin:23.4px 0 0 20px;font-family:"Avenir","Avenir Next","Noto Sans JP",sans-serif;font-size:16px;font-weight:400;line-height:1;letter-spacing:.0625em;color:#FFFFFF;animation:rise .8s cubic-bezier(.22,.61,.36,1) .6s both}
+:where([data-fv="concept"]) .ln{display:block;width:fit-content;overflow:hidden}
+:where([data-fv="concept"]) .ln>span{display:block;animation:lnUp 1.1s cubic-bezier(.22,.61,.36,1) .35s both}
+:where([data-fv="concept"]) .ln+.ln>span{animation-delay:.48s}
+
+/* Art: full-frame circles, drawn in a 1440 x 800 space */
+:where([data-fv="concept"]) .fv-art{position:absolute;z-index:1;inset:0;overflow:hidden;pointer-events:none;display:flex}
+:where([data-fv="concept"]) .art{display:block;flex:1;min-width:0;align-self:stretch;width:100%;height:100%;transform-origin:0 0}
+:where([data-fv="concept"]) .scl{transform-origin:0 0}
+:where([data-fv="concept"]) .art circle{vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .c-main{fill:none;stroke:#D9D9D9;stroke-width:1}
+:where([data-fv="concept"]) .c-mid{fill:none;stroke:#6B6B6B;stroke-width:1}
+:where([data-fv="concept"]) .c-dim{fill:none;stroke:#404040;stroke-width:1}
+:where([data-fv="concept"]) .c-lens{fill:none;stroke:#6D6767;stroke-width:1}
+:where([data-fv="concept"]) .lens-fill{fill:#D9D9D9}
+:where([data-fv="concept"]) .dot{fill:#1A1A1A}
+
+/* Motion control (icon only) */
+:where([data-fv="concept"]) .fv-meta{position:absolute;z-index:2;left:0;right:0;bottom:28px;display:flex;align-items:center;justify-content:flex-end}
+:where([data-fv="concept"]) .motion{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-right:-12px;padding:0;border:0;background:transparent;color:#8A8A8A;cursor:pointer;transition:color .2s}
+:where([data-fv="concept"]) .motion:hover{color:#FFFFFF}
+
+/* SP menu */
+:where([data-fv="concept"]) .sp-menu{position:absolute;top:0;left:0;width:100%;height:100svh;z-index:20;background:#1A1A1A;color:#FFFFFF;display:flex;flex-direction:column}
+:where([data-fv="concept"]) .sp-menu .logo,:where([data-fv="concept"]) .sp-menu .menu-btn{color:#FFFFFF}
+:where([data-fv="concept"]) .sp-menu-hd{height:64px;display:flex;align-items:center;justify-content:space-between}
+:where([data-fv="concept"]) .sp-nav{list-style:none;margin:48px 0 0;padding:0;display:flex;flex-direction:column}
+:where([data-fv="concept"]) .sp-nav li{border-top:1px solid #333333}
+:where([data-fv="concept"]) .sp-nav li:last-child{border-bottom:1px solid #333333}
+:where([data-fv="concept"]) .sp-nav a{display:flex;align-items:center;justify-content:space-between;min-height:64px;font-size:22px;font-weight:500;letter-spacing:.04em;text-decoration:none;color:#FFFFFF}
+:where([data-fv="concept"]) .sp-nav a span{font-family:"Noto Sans JP",sans-serif;font-size:12px;color:#9A9A9A;letter-spacing:.06em}
+
+/* Second view: the intersection becomes the page */
+:where([data-fv="concept"]) .second{position:relative;z-index:2;box-sizing:border-box;min-height:100svh;display:flex;align-items:center;background:#D9D9D9;color:#1A1A1A;padding-block:calc(var(--sec-top) + clamp(40px,5cqw,80px)) clamp(96px,10cqw,160px)}
+:where([data-fv="concept"]) .second a{color:#1A1A1A}
+:where([data-fv="concept"]) .concept{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);align-items:center}
+:where([data-fv="concept"]) .c-text{grid-column:1 / 6}
+:where([data-fv="concept"]) .c-fig{grid-column:7 / 13}
+:where([data-fv="concept"]) .sec-label{display:flex;align-items:center;gap:14px;margin:0 0 clamp(24px,2.6cqw,36px);font-family:"Avenir","Avenir Next",sans-serif;font-size:14px;font-weight:500;letter-spacing:.08em;color:#1A1A1A}
+:where([data-fv="concept"]) .sec-no{color:#4D4D4D}
+:where([data-fv="concept"]) .sec-line{display:block;width:clamp(32px,3.4cqw,48px);height:1px;background:currentColor}
+:where([data-fv="concept"]) .c-title{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:clamp(24px,2.4cqw,34px);font-weight:700;line-height:1.55;letter-spacing:.03em;text-wrap:balance;color:#1A1A1A}
+:where([data-fv="concept"]) .c-body{margin-top:clamp(28px,3cqw,44px)}
+:where([data-fv="concept"]) .c-body p{margin:0 0 20px;max-width:560px;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:400;line-height:1.95;letter-spacing:.02em;color:#1A1A1A}
+:where([data-fv="concept"]) .text-link{display:inline-flex;align-items:center;gap:clamp(28px,3.4cqw,48px);min-height:44px;margin-top:clamp(20px,2.4cqw,32px);font-family:"Noto Sans JP",sans-serif;font-size:clamp(16px,1.4cqw,20px);font-weight:400;letter-spacing:.04em;text-decoration:none;color:#1A1A1A}
+:where([data-fv="concept"]) .tl-ring{box-sizing:border-box;display:grid;place-items:center;flex:none;width:clamp(72px,6.4cqw,92px);aspect-ratio:1;border:1px solid #6B6B6B;border-radius:50%;color:#1A1A1A;transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+:where([data-fv="concept"]) .tl-ring svg{display:block;transition:transform .35s ease}
+:where([data-fv="concept"]) .second .text-link>span:first-child{text-decoration:underline}
+:where([data-fv="concept"]) .text-link:hover .tl-ring,:where([data-fv="concept"]) .text-link:focus-visible .tl-ring{background:#1A1A1A;border-color:#1A1A1A;color:#D9D9D9}
+:where([data-fv="concept"]) .text-link:hover .tl-ring svg,:where([data-fv="concept"]) .text-link:focus-visible .tl-ring svg{transform:translateX(5px)}
+
+/* Figure: two thin circles on one axis; the lens between them is the connection */
+:where([data-fv="concept"]) .dg{display:block;width:100%;height:auto;overflow:visible}
+:where([data-fv="concept"]) .dg circle,:where([data-fv="concept"]) .dg path,:where([data-fv="concept"]) .dg line{vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .dg-c{fill:none;stroke:#8A8A8A;stroke-width:1}
+:where([data-fv="concept"]) .dg-edge{fill:none;stroke:#1A1A1A;stroke-width:1.2}
+:where([data-fv="concept"]) .dg-axis{stroke:#4D4D4D;stroke-width:1;stroke-dasharray:3 5}
+:where([data-fv="concept"]) .dg-arrow{fill:none;stroke:#4D4D4D;stroke-width:1}
+:where([data-fv="concept"]) .dg-en{font-family:"Avenir","Avenir Next","Noto Sans JP",sans-serif;font-size:15px;font-weight:500;letter-spacing:.02em;fill:#1A1A1A;paint-order:stroke;stroke:#D9D9D9;stroke-width:12px;stroke-linejoin:round}
+:where([data-fv="concept"]) .dg-ja{font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:.08em;fill:#4D4D4D}
+:where([data-fv="concept"]) .dg-L,:where([data-fv="concept"]) .dg-R{transition:transform 1.6s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .dg-mid{transition:opacity .8s ease 1.1s}
+:where([data-fv="concept"]) .dg[data-in="0"] .dg-L{transform:translateX(-56px)}
+:where([data-fv="concept"]) .dg[data-in="0"] .dg-R{transform:translateX(56px)}
+:where([data-fv="concept"]) .dg[data-in="0"] .dg-mid{opacity:0;transition-delay:0s}
+
+/* PROFILE: person behind the work, on the same light ground as CONCEPT */
+:where([data-fv="concept"]) .profile{position:relative;z-index:2;background:#1A1A1A;color:#D9D9D9;padding-block:clamp(96px,9cqw,140px) clamp(120px,12cqw,180px)}
+:where([data-fv="concept"]) .profile a{color:#D9D9D9}
+:where([data-fv="concept"]) .profile .sec-label{color:#D9D9D9}
+:where([data-fv="concept"]) .profile .sec-no{color:#8A8A8A}
+:where([data-fv="concept"]) .profile .tl-ring{border-color:#6B6B6B;color:#D9D9D9}
+:where([data-fv="concept"]) .profile .text-link:hover .tl-ring,:where([data-fv="concept"]) .profile .text-link:focus-visible .tl-ring{background:#D9D9D9;border-color:#D9D9D9;color:#1A1A1A}
+:where([data-fv="concept"]) .pf{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);align-items:center;padding-top:clamp(40px,4.59cqw,72px)}
+:where([data-fv="concept"]) .pf-label{grid-column:1 / 6;grid-row:1;margin:0 0 clamp(36px,4.1cqw,59px)}
+:where([data-fv="concept"]) .pf-photo{grid-column:1 / 6;grid-row:2;align-self:center;position:relative;margin:0}
+:where([data-fv="concept"]) .pf-img{position:relative;overflow:hidden;aspect-ratio:481 / 517;background:#2A2A2A}
+:where([data-fv="concept"]) .pf-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%;transition:transform 1.8s cubic-bezier(.22,.61,.36,1),opacity 1.2s ease}
+:where([data-fv="concept"]) .pf-ring{position:absolute;right:-17%;bottom:-12.8%;width:44%;aspect-ratio:1;border:1px solid #D9D9D9;border-radius:50%;pointer-events:none;transition:transform 1.8s cubic-bezier(.22,.61,.36,1) .2s,opacity 1.2s ease .2s}
+:where([data-fv="concept"]) .pf-text{grid-column:7 / 13;grid-row:1 / 3;align-self:end;margin-bottom:clamp(24px,3.06cqw,44px)}
+:where([data-fv="concept"]) .pf-name{margin:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:clamp(22px,2.1cqw,30px);font-weight:500;line-height:1.2;letter-spacing:.2em;text-transform:uppercase;color:#D9D9D9}
+:where([data-fv="concept"]) .pf-name-ja{display:block;margin-top:14px;font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:400;line-height:1.5;letter-spacing:.2em;text-transform:none;color:#8A8A8A}
+:where([data-fv="concept"]) .pf-role{display:inline-flex;align-items:center;margin:clamp(22px,2.2cqw,30px) 0 0;padding:8px 16px;border:1px solid #6B6B6B;border-radius:999px;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.16em;color:#D9D9D9}
+:where([data-fv="concept"]) .pf-bio{margin:clamp(28px,3cqw,40px) 0 0;max-width:540px;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:400;line-height:1.95;letter-spacing:.02em;color:#D9D9D9}
+:where([data-fv="concept"]) .pf-link{font-family:"Avenir","Avenir Next",sans-serif;font-size:15px;font-weight:500;letter-spacing:.12em;margin-top:clamp(32px,3.2cqw,44px)}
+:where([data-fv="concept"]) .pf[data-in="0"] .pf-img img{opacity:0;transform:scale(1.08)}
+:where([data-fv="concept"]) .pf[data-in="0"] .pf-ring{opacity:0;transform:translate(-36%,-28%)}
+
+/* WORKS: slider. Top half light, a dark band rises behind the lower half of the slides */
+:where([data-fv="concept"]) .works{position:relative;z-index:2;background:#D9D9D9;color:#1A1A1A;--vl:rgba(26,26,26,.06);padding-top:clamp(120px,12cqw,180px);
+  --wl:calc((100cqw - min(1200px, 100cqw - 2 * clamp(20px,4cqw,48px))) / 2);
+  --w1:clamp(320px,42cqw,600px);--w2:clamp(220px,26.5cqw,380px);--gap:clamp(24px,4cqw,56px);--ar:.75}
+:where([data-fv="concept"]) .works a{color:inherit}
+:where([data-fv="concept"]) .wk-head{margin-bottom:clamp(48px,5cqw,72px)}
+:where([data-fv="concept"]) .wk-head .sec-label{margin-bottom:0;font-weight:500}
+:where([data-fv="concept"]) .sec-bar{color:#4D4D4D;font-weight:400}
+:where([data-fv="concept"]) .sec-ja{font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:500;letter-spacing:.08em}
+:where([data-fv="concept"]) .wk-stage{position:relative;padding-bottom:clamp(112px,11cqw,160px)}
+:where([data-fv="concept"]) .wk-band{position:absolute;z-index:0;left:0;right:0;bottom:0;top:calc(var(--w1) * var(--ar) * .5);background:#1A1A1A}
+:where([data-fv="concept"]) .wk-viewport{position:relative;z-index:1;margin-left:var(--wl);overflow:hidden;touch-action:pan-y;transition:opacity 1s ease,transform 1.2s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-stage[data-in="0"] .wk-viewport{opacity:0;transform:translateY(40px)}
+:where([data-fv="concept"]) .wk-track{display:flex;align-items:flex-start;gap:var(--gap);margin:0;padding:0;list-style:none;transform:translateX(calc(var(--i, 0) * -1 * (var(--w2) + var(--gap))));transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-slide{flex:none;width:var(--w2);transition:width .9s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-slide[data-active]{width:var(--w1)}
+:where([data-fv="concept"]) .wk-card{display:block;text-decoration:none;color:#D9D9D9}
+:where([data-fv="concept"]) .wk-thumb{position:relative;overflow:hidden;aspect-ratio:4 / 3;background:#EDEDED}
+:where([data-fv="concept"]) .wk-thumb svg{display:block;width:100%;height:100%;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-thumb circle{vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .wk-view{position:absolute;inset:0;margin:auto;display:grid;place-items:center;width:96px;aspect-ratio:1;border:1px solid #1A1A1A;border-radius:50%;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.16em;color:#1A1A1A;opacity:0;transform:scale(.8);transition:opacity .45s ease,transform .45s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-slide[data-active] .wk-card:hover .wk-thumb svg,:where([data-fv="concept"]) .wk-slide[data-active] .wk-card:focus-visible .wk-thumb svg{transform:scale(1.04)}
+:where([data-fv="concept"]) .wk-slide[data-active] .wk-card:hover .wk-view,:where([data-fv="concept"]) .wk-slide[data-active] .wk-card:focus-visible .wk-view{opacity:1;transform:none}
+:where([data-fv="concept"]) .wk-cap{display:grid;grid-template-columns:auto 1fr;column-gap:clamp(24px,4.17cqw,60px);align-items:start;margin-top:32px;opacity:0;transition:opacity .5s ease}
+:where([data-fv="concept"]) .wk-slide[data-active] .wk-cap{opacity:1;transition-delay:.35s}
+:where([data-fv="concept"]) .wk-client{margin:0;white-space:nowrap;font-family:"Noto Sans JP",sans-serif;font-size:18px;font-weight:500;line-height:22.1px;letter-spacing:.044em;color:#8A8A8A}
+:where([data-fv="concept"]) .wk-body{min-width:0}
+:where([data-fv="concept"]) .wk-title{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;line-height:1.75;letter-spacing:.03em;color:#D9D9D9}
+:where([data-fv="concept"]) .wk-cat{display:inline-flex;margin:14px 0 0;padding:6px 14px;border:1px solid #4D4D4D;border-radius:999px;font-family:"Avenir","Avenir Next",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;color:#D9D9D9}
+:where([data-fv="concept"]) .wk-ctrl{position:absolute;z-index:2;left:calc(var(--w1) + var(--gap));right:var(--wl);top:calc(var(--w2) * var(--ar) + 64px);display:flex;align-items:center;gap:16px;color:#D9D9D9}
+:where([data-fv="concept"]) .wk-btn{box-sizing:border-box;display:grid;place-items:center;flex:none;width:56px;height:56px;padding:0;border:1px solid #6B6B6B;background:transparent;color:#D9D9D9;cursor:pointer;transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease}
+:where([data-fv="concept"]) .wk-btn:hover:not(:disabled),:where([data-fv="concept"]) .wk-btn:focus-visible{background:#D9D9D9;border-color:#D9D9D9;color:#1A1A1A}
+:where([data-fv="concept"]) .wk-btn:disabled{opacity:.3;cursor:default}
+:where([data-fv="concept"]) .wk-count{display:flex;align-items:center;gap:20px;flex:1;min-width:120px;margin-left:24px;font-family:"Avenir","Avenir Next",sans-serif;font-size:14px;font-weight:500;letter-spacing:.06em}
+:where([data-fv="concept"]) .wk-cur::before{content:attr(data-n)}
+:where([data-fv="concept"]) .wk-bar{position:relative;flex:1;height:1px;background:#4D4D4D;overflow:hidden}
+:where([data-fv="concept"]) .wk-bar i{position:absolute;inset:0;background:#D9D9D9;transform-origin:left;transform:scaleX(var(--p, 0));transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .wk-all{position:relative;display:grid;place-items:center;flex:none;width:128px;height:128px;margin-left:clamp(24px,3cqw,48px);text-decoration:none;color:#D9D9D9}
+:where([data-fv="concept"]) .wk-all svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 24s linear infinite}
+:where([data-fv="concept"]) .wk-all text{font-family:"Avenir","Avenir Next",sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.24em;fill:currentColor}
+:where([data-fv="concept"]) .wk-all .core{display:grid;place-items:center;width:72px;height:72px;border:1px solid #6B6B6B;border-radius:50%;transition:background-color .35s ease,color .35s ease,border-color .35s ease}
+:where([data-fv="concept"]) .wk-all:hover .core,:where([data-fv="concept"]) .wk-all:focus-visible .core{background:#D9D9D9;border-color:#D9D9D9;color:#1A1A1A}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* CONTACT: full-bleed photo, two rings that meet on hover */
+:where([data-fv="concept"]) .contact{position:relative;z-index:2;overflow:hidden;background:#1A1A1A;color:#D9D9D9;padding-block:clamp(140px,13cqw,200px)}
+:where([data-fv="concept"]) .ct-bg{position:absolute;inset:0;z-index:0;margin:0}
+:where([data-fv="concept"]) .ct-bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+:where([data-fv="concept"]) .ct-bg::after{content:"";position:absolute;inset:0;background:rgba(26,26,26,.8)}
+:where([data-fv="concept"]) .ct{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);align-items:end;transition:opacity 1s ease,transform 1.2s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .ct[data-in="0"]{opacity:0;transform:translateY(40px)}
+:where([data-fv="concept"]) .ct-text{grid-column:1 / 8}
+:where([data-fv="concept"]) .contact .sec-label{color:#D9D9D9;margin-bottom:clamp(28px,3cqw,40px)}
+:where([data-fv="concept"]) .contact .sec-no,:where([data-fv="concept"]) .contact .sec-bar{color:#8A8A8A}
+:where([data-fv="concept"]) .ct-title{margin:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:clamp(40px,5cqw,72px);font-weight:500;line-height:1.08;letter-spacing:.01em;color:#D9D9D9}
+:where([data-fv="concept"]) .ct-title span{display:block;white-space:nowrap}
+:where([data-fv="concept"]) .ct-lead{margin:clamp(28px,3cqw,40px) 0 0;max-width:560px;text-wrap:pretty;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:400;line-height:1.95;letter-spacing:.02em;color:#D9D9D9}
+:where([data-fv="concept"]) .ct-btn{grid-column:9 / 13;justify-self:end;position:relative;display:grid;place-items:center;width:clamp(200px,17cqw,240px);aspect-ratio:1;text-decoration:none;color:#D9D9D9}
+:where([data-fv="concept"]) .ct-ring{position:absolute;top:0;width:78%;aspect-ratio:1;border:1px solid #D9D9D9;border-radius:50%;box-sizing:border-box;transition:transform .7s cubic-bezier(.22,.61,.36,1),background-color .5s ease}
+:where([data-fv="concept"]) .ct-ring.a{left:0;transform:translateY(14%)}
+:where([data-fv="concept"]) .ct-ring.b{right:0;transform:translateY(14%)}
+:where([data-fv="concept"]) .ct-btn:hover .ct-ring.a,:where([data-fv="concept"]) .ct-btn:focus-visible .ct-ring.a{transform:translate(14%,14%)}
+:where([data-fv="concept"]) .ct-btn:hover .ct-ring.b,:where([data-fv="concept"]) .ct-btn:focus-visible .ct-ring.b{transform:translate(-14%,14%);background:#D9D9D9}
+:where([data-fv="concept"]) .ct-in{position:relative;display:grid;justify-items:center;gap:10px;font-family:"Avenir","Avenir Next",sans-serif;font-size:13px;font-weight:500;letter-spacing:.2em;transition:color .4s ease}
+:where([data-fv="concept"]) .ct-btn:hover .ct-in,:where([data-fv="concept"]) .ct-btn:focus-visible .ct-in{color:#1A1A1A}
+:where([data-fv="concept"]) .ct-in svg{transition:transform .4s ease}
+:where([data-fv="concept"]) .ct-btn:hover .ct-in svg,:where([data-fv="concept"]) .ct-btn:focus-visible .ct-in svg{transform:translateX(5px)}
+
+/* FOOTER */
+:where([data-fv="concept"]) .ft{position:relative;z-index:2;background:#1A1A1A;color:#D9D9D9;border-top:1px solid #333;padding-block:clamp(80px,8cqw,112px) 36px}
+:where([data-fv="concept"]) .ft a{color:#D9D9D9;text-decoration:none}
+:where([data-fv="concept"]) .ft-top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:48px}
+:where([data-fv="concept"]) .ft-logo{display:inline-flex;align-items:center;gap:14px;min-height:44px}
+:where([data-fv="concept"]) .ft-logo svg{display:block;flex:none}
+:where([data-fv="concept"]) .ft-logo span{font-family:"Avenir","Avenir Next",sans-serif;font-size:20px;font-weight:500;letter-spacing:.34em;line-height:1}
+:where([data-fv="concept"]) .ft-tag{margin:20px 0 0;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:400;letter-spacing:.12em;color:#8A8A8A}
+:where([data-fv="concept"]) .ft-nav{display:flex;gap:clamp(32px,4.4cqw,64px);margin:0;padding:0;list-style:none}
+:where([data-fv="concept"]) .ft-nav a{display:grid;gap:8px;min-height:44px;font-family:"Avenir","Avenir Next",sans-serif;font-size:14px;font-weight:500;letter-spacing:.12em;transition:opacity .3s ease}
+:where([data-fv="concept"]) .ft-nav a span{font-family:"Noto Sans JP",sans-serif;font-size:11px;font-weight:400;letter-spacing:.1em;color:#8A8A8A}
+:where([data-fv="concept"]) .ft-nav a:hover{opacity:.6}
+:where([data-fv="concept"]) .ft-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:clamp(72px,7cqw,104px);padding-top:28px;border-top:1px solid #333}
+:where([data-fv="concept"]) .ft-copy{margin:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;color:#8A8A8A}
+:where([data-fv="concept"]) .ft-pt{display:inline-flex;align-items:center;gap:16px;padding:0;border:0;background:none;color:#D9D9D9;cursor:pointer;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.16em}
+:where([data-fv="concept"]) .ft-pt i{box-sizing:border-box;display:grid;place-items:center;width:52px;height:52px;border:1px solid #6B6B6B;border-radius:50%;transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+:where([data-fv="concept"]) .ft-pt svg{transition:transform .35s ease}
+:where([data-fv="concept"]) .ft-pt:hover i,:where([data-fv="concept"]) .ft-pt:focus-visible i{background:#D9D9D9;border-color:#D9D9D9;color:#1A1A1A}
+:where([data-fv="concept"]) .ft-pt:hover svg,:where([data-fv="concept"]) .ft-pt:focus-visible svg{transform:translateY(-4px)}
+
+/* Vertical guide lines behind the second view onward (follow the 1200px content width) */
+:where([data-fv="concept"]) .second::before,:where([data-fv="concept"]) .profile::before,:where([data-fv="concept"]) .works::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:50%;width:min(1200px,calc(100% - 2 * clamp(20px,4cqw,48px)));transform:translateX(-50%);pointer-events:none;border-right:1px solid var(--vl);background-image:linear-gradient(to right,var(--vl) 1px,transparent 1px);background-size:calc(100% / 3) 100%}
+:where([data-fv="concept"]) .second{--vl:rgba(26,26,26,.06)}
+:where([data-fv="concept"]) .profile{--vl:rgba(217,217,217,.07)}
+:where([data-fv="concept"]) .second > .wrap,:where([data-fv="concept"]) .profile > .wrap,:where([data-fv="concept"]) .works > .wrap{position:relative;z-index:1}
+
+/* Motion */
+:where([data-fv="concept"]) .inA{animation:inA 1.8s cubic-bezier(.22,.61,.36,1) .2s both}
+:where([data-fv="concept"]) .inB{animation:inB 1.8s cubic-bezier(.22,.61,.36,1) .2s both}
+:where([data-fv="concept"]) .lens{animation:fade 1.2s ease 1.9s both}
+:where([data-fv="concept"]) .far{animation:fade 1.6s ease both}
+:where([data-fv="concept"]) .mA{animation:dA var(--dur) ease-in-out 2s infinite alternate}
+:where([data-fv="concept"]) .mB{animation:dB var(--dur) ease-in-out 2s infinite alternate}
+:where([data-fv="concept"]) .mC{animation:dC calc(var(--dur) * 1.3) ease-in-out 2s infinite alternate}
+:where([data-fv="concept"]) .mS1{animation:dS1 calc(var(--dur) * 1.6) ease-in-out infinite alternate}
+:where([data-fv="concept"]) .mS2{animation:dS2 calc(var(--dur) * 1.4) ease-in-out infinite alternate}
+:where([data-fv="concept"]) .mS3{animation:dS3 calc(var(--dur) * 1.1) ease-in-out infinite alternate}
+:where([data-fv="concept"]) .mN1{animation:dN1 calc(var(--dur) * 0.9) ease-in-out 2.2s infinite alternate}
+:where([data-fv="concept"]) .mN2{animation:dN2 calc(var(--dur) * 1.2) ease-in-out 2.2s infinite alternate}
+:where([data-fv="concept"]) .mN3{animation:dN3 calc(var(--dur) * 1.05) ease-in-out 2.2s infinite alternate}
+@keyframes lnUp{from{transform:translateY(105%)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes inA{from{opacity:0;transform:translate(-120px,36px)}to{opacity:1;transform:none}}
+@keyframes inB{from{opacity:0;transform:translate(120px,-36px)}to{opacity:1;transform:none}}
+@keyframes dA{to{transform:translate(42px,10px)}}
+@keyframes dB{to{transform:translate(-42px,-14px)}}
+@keyframes dC{to{transform:translate(-14px,-40px)}}
+@keyframes dS1{to{transform:translate(18px,26px)}}
+@keyframes dS2{to{transform:translate(-22px,-16px)}}
+@keyframes dS3{to{transform:translate(10px,22px)}}
+@keyframes dN1{to{transform:translate(-64px,42px)}}
+@keyframes dN2{to{transform:translate(-38px,34px)}}
+@keyframes dN3{to{transform:translate(-50px,-46px)}}
+:where([data-fv="concept"]) .is-paused .stage *,:where([data-fv="concept"]) .is-paused .stage *::after,:where([data-fv="concept"]) .stage[data-zooming="1"] *{animation-play-state:paused !important}
+
+/* Reduced motion: no zoom, no drift; the second view simply follows the FV */
+@media (prefers-reduced-motion: reduce){
+:where([data-fv="concept"]) .page *,:where([data-fv="concept"]) .page *::after{animation:none !important;transition:none !important}
+:where([data-fv="concept"]) .zoom{height:auto}
+:where([data-fv="concept"]) .stage{position:relative;height:auto;min-height:100svh}
+:where([data-fv="concept"]) .lit-bg{display:none}
+:where([data-fv="concept"]) .motion{display:none}
+}
+
+/* Tablet: stack, art below copy, the pair of circles centred */
+@container (max-width: 1023px){
+:where([data-fv="concept"]) .nav{gap:28px}
+:where([data-fv="concept"]) .fv-body{justify-content:flex-start;padding-top:calc(var(--hd) + 40px)}
+:where([data-fv="concept"]) .fv-copy{padding-bottom:0}
+:where([data-fv="concept"]) .fv-art{position:relative;inset:auto;flex:1 1 auto;min-height:300px;margin-top:24px;overflow:visible}
+:where([data-fv="concept"]) .scl{--s:1.1;transform:translate(720px,400px) scale(var(--s)) translate(-918.3px,-316.2px)}
+:where([data-fv="concept"]) .second{padding-top:calc(var(--hd) + clamp(40px,5cqw,80px))}
+:where([data-fv="concept"]) .ct-bg::after{background:linear-gradient(180deg,#1A1A1A 0,rgba(26,26,26,0) 140px),linear-gradient(90deg,rgba(26,26,26,.8) 0%,rgba(26,26,26,.45) 45%,rgba(26,26,26,.1) 100%)}
+:where([data-fv="concept"]) .ct-title{text-transform:uppercase}
+:where([data-fv="concept"]) .c-text,:where([data-fv="concept"]) .c-fig{grid-column:1 / -1}
+:where([data-fv="concept"]) .c-fig{margin-top:56px;max-width:640px}
+:where([data-fv="concept"]) .pf-photo,:where([data-fv="concept"]) .pf-text{grid-column:1 / -1}
+:where([data-fv="concept"]) .pf-label,:where([data-fv="concept"]) .pf-text{grid-column:1 / -1}
+:where([data-fv="concept"]) .pf-photo{grid-row:1;width:min(440px,78%)}
+:where([data-fv="concept"]) .pf-img{aspect-ratio:4 / 5}
+:where([data-fv="concept"]) .pf-img img{object-position:50% 50%}
+:where([data-fv="concept"]) .second .text-link>span:first-child{text-decoration:none}
+:where([data-fv="concept"]) .pf-ring{bottom:-11%}
+:where([data-fv="concept"]) .pf-label{grid-row:2;margin:72px 0 clamp(24px,2.6cqw,36px)}
+:where([data-fv="concept"]) .pf-text{grid-row:3;align-self:center;margin:0}
+:where([data-fv="concept"]) .wk-cap{column-gap:clamp(24px,3cqw,48px)}
+:where([data-fv="concept"]) .wk-client{font-size:13px;line-height:1.7;letter-spacing:.06em}
+:where([data-fv="concept"]) .works{--w1:62cqw;--w2:46cqw;--gap:32px}
+:where([data-fv="concept"]) .wk-ctrl{position:relative;left:auto;right:auto;top:auto;margin:48px var(--wl) 0 0}
+:where([data-fv="concept"]) .ct-text{grid-column:1 / -1}
+:where([data-fv="concept"]) .ct-btn{grid-column:1 / -1;justify-self:start;margin-top:56px}
+}
+/* SP */
+@container (max-width: 767px){
+:where([data-fv="concept"]) .page{--hd:64px;--zoom-len:120svh}
+:where([data-fv="concept"]) .hd .nav{display:none}
+:where([data-fv="concept"]) .menu-btn{display:inline-flex}
+:where([data-fv="concept"]) .logo{gap:10px}
+:where([data-fv="concept"]) .logo svg{width:30px;height:20px}
+:where([data-fv="concept"]) .logo-word{font-size:16px}
+:where([data-fv="concept"]) .fv-body{padding-top:calc(var(--hd) + 32px)}
+:where([data-fv="concept"]) .fv-copy h1 .en-big{font-size:clamp(40px,11.4cqw,48px);line-height:1.02;letter-spacing:-.01em}
+:where([data-fv="concept"]) .fv-copy h1 .ja{font-size:14px;font-weight:400;line-height:1.6;letter-spacing:.12em}
+:where([data-fv="concept"]) .fv-copy .en-sub{margin:12px 0 0}
+:where([data-fv="concept"]) .fv-art{margin-top:16px;min-height:260px}
+:where([data-fv="concept"]) .scl{--s:1.24}
+:where([data-fv="concept"]) .c-body p{font-size:15px;line-height:1.9}
+:where([data-fv="concept"]) .c-title{font-size:22px;font-weight:500}
+:where([data-fv="concept"]) .c-fig{margin-top:44px}
+:where([data-fv="concept"]) .profile{padding-block:24px 112px}
+:where([data-fv="concept"]) .pf{padding-top:80px}
+:where([data-fv="concept"]) .pf-photo{width:84%}
+:where([data-fv="concept"]) .pf-ring{right:-14%;bottom:-9%;width:40%}
+:where([data-fv="concept"]) .pf-label{margin-top:60px}
+:where([data-fv="concept"]) .works{padding-top:96px;--w1:78cqw;--w2:78cqw;--gap:16px}
+:where([data-fv="concept"]) .wk-stage{padding-bottom:96px}
+:where([data-fv="concept"]) .contact{padding-block:112px}
+:where([data-fv="concept"]) .ft{padding-block:72px 28px}
+:where([data-fv="concept"]) .ft-top-row{flex-direction:column;gap:48px}
+:where([data-fv="concept"]) .ft-logo span{font-size:16px}
+:where([data-fv="concept"]) .ft-top-row > nav{width:100%}
+:where([data-fv="concept"]) .ft-nav{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;width:100%}
+:where([data-fv="concept"]) .ft-bottom{margin-top:56px}
+:where([data-fv="concept"]) .ct-title{font-size:clamp(28px,8.4cqw,34px)}
+:where([data-fv="concept"]) .ct-btn{width:180px;margin-top:48px}
+:where([data-fv="concept"]) .wk-cap{grid-template-columns:1fr;row-gap:6px;margin-top:24px}
+:where([data-fv="concept"]) .wk-ctrl{gap:12px}
+:where([data-fv="concept"]) .wk-btn{width:44px;height:44px}
+:where([data-fv="concept"]) .wk-count{min-width:0;margin-left:8px;gap:10px;font-size:13px}
+:where([data-fv="concept"]) .wk-all{width:92px;height:92px;margin-left:4px}
+:where([data-fv="concept"]) .wk-all text{font-size:12.5px}
+:where([data-fv="concept"]) .wk-all .core{width:52px;height:52px}
+:where([data-fv="concept"]) .pf-name{font-size:22px}
+:where([data-fv="concept"]) .pf-bio{font-size:15px;line-height:1.9}
+}
+
+/* ===== CONCEPT page ===== */
+:where([data-fv="concept"]) .wp-hero{position:relative;z-index:2;overflow:hidden;background:#1A1A1A;color:#D9D9D9;--vl:rgba(217,217,217,.07);padding:calc(var(--hd) + clamp(48px,5cqw,72px)) 0 clamp(96px,10.5cqw,152px)}
+:where([data-fv="concept"]) .wp-hero::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:50%;width:min(1200px,calc(100% - 2 * clamp(20px,4cqw,48px)));transform:translateX(-50%);pointer-events:none;border-right:1px solid var(--vl);background-image:linear-gradient(to right,var(--vl) 1px,transparent 1px);background-size:calc(100% / 3) 100%}
+:where([data-fv="concept"]) .wp-hero .wrap{position:relative;z-index:1}
+:where([data-fv="concept"]) .wp-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+:where([data-fv="concept"]) .wp-crumb{display:flex;flex:none;gap:12px;margin:0 0 clamp(10px,1.2cqw,18px);padding:0;list-style:none;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;color:#8A8A8A}
+:where([data-fv="concept"]) .wp-crumb li + li::before{content:"/";margin-right:12px;color:#4D4D4D}
+:where([data-fv="concept"]) .wp-crumb a{color:#8A8A8A;text-decoration:none}
+:where([data-fv="concept"]) .wp-crumb a:hover{color:#D9D9D9}
+:where([data-fv="concept"]) .wp-hero .sec-label{color:#D9D9D9;margin-bottom:clamp(24px,2.6cqw,36px)}
+:where([data-fv="concept"]) .wp-hero .sec-bar,:where([data-fv="concept"]) .wp-hero .sec-no{color:#8A8A8A}
+:where([data-fv="concept"]) .wp-title{margin:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:clamp(52px,5.56cqw,80px);font-weight:500;line-height:.95;letter-spacing:.01em;color:#D9D9D9}
+:where([data-fv="concept"]) .wp-lead{margin:clamp(40px,4.4cqw,64px) 0 0;max-width:520px;font-family:"Noto Sans JP",sans-serif;font-size:15px;line-height:1.95;letter-spacing:.02em;color:#D9D9D9}
+:where([data-fv="concept"]) .wp-art{position:absolute;z-index:0;right:-6cqw;top:50%;width:min(56cqw,760px);transform:translateY(-44%);pointer-events:none}
+:where([data-fv="concept"]) .wp-art svg{display:block;width:100%;height:auto;overflow:visible}
+:where([data-fv="concept"]) .wp-art circle{fill:none;stroke-width:1;vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .wp-art .ca{stroke:#D9D9D9;animation:wpA 16s ease-in-out infinite alternate}
+:where([data-fv="concept"]) .wp-art .cb{stroke:#6B6B6B;animation:wpB 18s ease-in-out infinite alternate}
+:where([data-fv="concept"]) .wp-art .cc{stroke:#404040}
+@keyframes wpA{to{transform:translate(36px,10px)}}
+@keyframes wpB{to{transform:translate(-36px,-12px)}}
+@container (max-width: 1023px){:where([data-fv="concept"]) .wp-art{width:70cqw;right:-18cqw;opacity:.7}}
+@container (max-width: 767px){
+:where([data-fv="concept"]) .wp-hero{padding:calc(var(--hd) + 56px) 0 72px}
+:where([data-fv="concept"]) .wp-title{font-size:clamp(44px,12.4cqw,56px)}
+:where([data-fv="concept"]) .wp-art{width:110cqw;right:-50cqw;top:30%;opacity:.55}
+:where([data-fv="concept"]) .wp-head{align-items:flex-start;flex-direction:column-reverse;gap:20px}
+:where([data-fv="concept"]) .wp-crumb{margin:0}
+}
+@media (prefers-reduced-motion: reduce){:where([data-fv="concept"]) .wp-art circle{animation:none}}
+
+:where([data-fv="concept"]) .cp-sec{position:relative;z-index:2}
+:where([data-fv="concept"]) .cp-sec::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:50%;width:min(1200px,calc(100% - 2 * clamp(20px,4cqw,48px)));transform:translateX(-50%);pointer-events:none;border-right:1px solid var(--vl);background-image:linear-gradient(to right,var(--vl) 1px,transparent 1px);background-size:calc(100% / 3) 100%}
+:where([data-fv="concept"]) .cp-sec > .wrap{position:relative;z-index:1}
+:where([data-fv="concept"]) .cp-light{background:#D9D9D9;color:#1A1A1A;--vl:rgba(26,26,26,.06)}
+:where([data-fv="concept"]) .cp-dark{background:#1A1A1A;color:#D9D9D9;--vl:rgba(217,217,217,.07)}
+:where([data-fv="concept"]) .cp-dark .sec-label{color:#D9D9D9}
+:where([data-fv="concept"]) .cp-dark .sec-no,:where([data-fv="concept"]) .cp-dark .sec-bar{color:#8A8A8A}
+:where([data-fv="concept"]) .cp-head{margin-bottom:clamp(48px,5cqw,72px)}
+:where([data-fv="concept"]) .cp-head .sec-label{margin:0 0 clamp(24px,2.6cqw,36px)}
+:where([data-fv="concept"]) .cp-lead-ttl{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:clamp(24px,2.4cqw,34px);font-weight:700;line-height:1.55;letter-spacing:.03em}
+:where([data-fv="concept"]) .cp-p{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:400;line-height:1.95;letter-spacing:.02em}
+:where([data-fv="concept"]) .cp-p + .cp-p{margin-top:1.4em}
+
+/* 01 MESSAGE */
+:where([data-fv="concept"]) .cp-msg{padding-block:clamp(72px,7.5cqw,112px) clamp(96px,10cqw,150px)}
+:where([data-fv="concept"]) .cp-msg-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);align-items:start}
+:where([data-fv="concept"]) .cp-msg-copy{grid-column:1 / 8}
+:where([data-fv="concept"]) .cp-copy{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:clamp(28px,3.2cqw,46px);font-weight:700;line-height:1.5;letter-spacing:.06em;color:#1A1A1A}
+:where([data-fv="concept"]) .cp-copy-en{margin:20px 0 0;font-family:"Avenir","Avenir Next",sans-serif;font-size:15px;font-weight:400;letter-spacing:.06em;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-msg-text{grid-column:8 / 13;padding-top:clamp(8px,1cqw,16px)}
+:where([data-fv="concept"]) .cp-mean{margin-top:clamp(28px,3cqw,40px);padding-top:clamp(24px,2.6cqw,32px);border-top:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-mean-k{display:block;margin-bottom:12px;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-fig{margin:clamp(72px,8cqw,112px) 0 0}
+:where([data-fv="concept"]) .cp-fig svg{display:block;width:100%;height:auto;overflow:visible}
+:where([data-fv="concept"]) .cp-fig circle{vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .cp-fig .o{fill:none;stroke:#1A1A1A;stroke-width:1}
+:where([data-fv="concept"]) .cp-fig .cp-lens{fill:#1A1A1A}
+:where([data-fv="concept"]) .cp-fig .t-en{font-family:"Avenir","Avenir Next",sans-serif;font-size:15px;font-weight:500;letter-spacing:.1em;fill:#1A1A1A}
+:where([data-fv="concept"]) .cp-fig .t-ja{font-family:"Noto Sans JP",sans-serif;font-size:13px;letter-spacing:.08em;fill:#4D4D4D}
+:where([data-fv="concept"]) .cp-fig .t-in{font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:700;letter-spacing:.2em;fill:#D9D9D9}
+:where([data-fv="concept"]) .cp-fig .t-in-en{font-family:"Avenir","Avenir Next",sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;fill:#8A8A8A}
+:where([data-fv="concept"]) .cp-fig-cap{margin:0 0 clamp(24px,3cqw,40px);font-family:"Noto Sans JP",sans-serif;font-size:15px;line-height:1.8;letter-spacing:.04em;color:#1A1A1A}
+:where([data-fv="concept"]) .cp-fig .t-in-v{font-family:"Avenir","Avenir Next",sans-serif;font-size:15px;font-weight:500;letter-spacing:.18em;fill:#D9D9D9}
+:where([data-fv="concept"]) .cp-fig .t-in-ja{font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:.04em;fill:#D9D9D9}
+:where([data-fv="concept"]) .cp-fig .cp-drop{stroke:#1A1A1A;stroke-width:1;vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .cp-fig .cp-dot{fill:#1A1A1A}
+:where([data-fv="concept"]) .cp-legend{display:none;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(40px,4.4cqw,64px) 0 0;padding:0;border-top:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-legend > div{padding:24px clamp(16px,2cqw,28px) 0 0}
+:where([data-fv="concept"]) .cp-legend dt{font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-legend dd{margin:10px 0 0;font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.8;letter-spacing:.03em;color:#1A1A1A}
+:where([data-fv="concept"]) .cp-fig .gL,:where([data-fv="concept"]) .cp-fig .gR{transition:transform 1.6s cubic-bezier(.22,.61,.36,1)}
+:where([data-fv="concept"]) .cp-fig .gM{transition:opacity .8s ease 1.1s}
+:where([data-fv="concept"]) .cp-fig[data-in="0"] .gL{transform:translateX(-60px)}
+:where([data-fv="concept"]) .cp-fig[data-in="0"] .gR{transform:translateX(60px)}
+:where([data-fv="concept"]) .cp-fig[data-in="0"] .gM{opacity:0;transition-delay:0s}
+
+/* 02 STRENGTH */
+:where([data-fv="concept"]) .cp-str{padding-block:0 clamp(120px,12cqw,180px)}
+:where([data-fv="concept"]) .cp-str .wrap{padding-top:clamp(96px,10cqw,150px);border-top:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:0;list-style:none;border-left:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-card{padding:8px clamp(20px,2.2cqw,32px) 8px;border-right:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-ico{display:block;width:88px;height:88px;margin-bottom:clamp(28px,3cqw,40px)}
+:where([data-fv="concept"]) .cp-ico circle{fill:none;stroke:#1A1A1A;stroke-width:1;vector-effect:non-scaling-stroke}
+:where([data-fv="concept"]) .cp-ico .f{fill:#1A1A1A;stroke:none}
+:where([data-fv="concept"]) .cp-ico .m{stroke:#8A8A8A}
+:where([data-fv="concept"]) .cp-no{display:block;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-ttl{margin:10px 0 0;font-family:"Noto Sans JP",sans-serif;font-size:clamp(18px,1.5cqw,20px);font-weight:700;line-height:1.5;letter-spacing:.04em}
+:where([data-fv="concept"]) .cp-en{display:block;margin-top:6px;font-family:"Avenir","Avenir Next",sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-card .cp-p{margin-top:20px}
+
+/* 03 PROCESS */
+:where([data-fv="concept"]) .cp-proc{padding-block:clamp(120px,12cqw,180px)}
+:where([data-fv="concept"]) .cp-proc .cp-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);align-items:end}
+:where([data-fv="concept"]) .cp-proc .cp-head > div{grid-column:1 / 8}
+:where([data-fv="concept"]) .cp-proc .cp-head .cp-p{grid-column:8 / 13;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-proc-ttl{margin:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:clamp(36px,4.4cqw,64px);font-weight:500;line-height:1.08;letter-spacing:.01em;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-proc-ja{font-family:"Noto Sans JP",sans-serif;font-size:clamp(28px,3.2cqw,46px);font-weight:700;line-height:1.5;letter-spacing:.06em}
+:where([data-fv="concept"]) .cp-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(16px,2.2cqw,32px);margin:0;padding:0;list-style:none}
+:where([data-fv="concept"]) .cp-ring{position:relative;display:grid;place-items:center;align-content:center;gap:10px;width:106%;margin-left:0;aspect-ratio:1;border:1px solid #6B6B6B;border-radius:50%;box-sizing:border-box;text-align:center;transition:transform 1.4s cubic-bezier(.22,.61,.36,1),opacity 1s ease}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring{border-color:#D9D9D9;width:112%;margin-left:-6%}
+:where([data-fv="concept"]) .cp-step:nth-child(3) .cp-ring{margin-left:-6%}
+/* process arrow: dashed line through the centers of the three circles */
+:where([data-fv="concept"]) .cp-steps{position:relative;--cx:calc((min(1200px,100cqw - 2 * clamp(20px,4cqw,48px)) - 2 * clamp(16px,2.2cqw,32px)) / 3 * .53);--ext:clamp(0px,2cqw,28px)}
+:where([data-fv="concept"]) .cp-steps::before{content:"";position:absolute;z-index:0;left:calc(-1 * var(--ext));right:calc(-1 * var(--ext));top:var(--cx);border-top:1px dashed #6B6B6B;pointer-events:none}
+:where([data-fv="concept"]) .cp-steps::after{content:"";position:absolute;z-index:0;right:calc(-1 * var(--ext));top:calc(var(--cx) - 4.5px);width:9px;height:9px;border-top:1px solid #6B6B6B;border-right:1px solid #6B6B6B;transform:rotate(45deg);pointer-events:none}
+:where([data-fv="concept"]) .cp-step{position:relative;z-index:1}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring{margin-top:-3%}
+:where([data-fv="concept"]) .cp-ring b{position:absolute;left:0;right:0;top:calc(50% - 40px)}
+:where([data-fv="concept"]) .cp-ring > span,:where([data-fv="concept"]) .cp-ring span{position:relative;padding:2px 12px;background:#1A1A1A}
+:where([data-fv="concept"]) .cp-ring b{font-family:"Avenir","Avenir Next",sans-serif;font-size:13px;font-weight:500;letter-spacing:.16em;color:#8A8A8A}
+:where([data-fv="concept"]) .cp-ring span{font-family:"Avenir","Avenir Next",sans-serif;font-size:clamp(18px,2cqw,28px);font-weight:500;letter-spacing:.12em;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-steps[data-in="0"] .cp-step:nth-child(1) .cp-ring{transform:translateX(-40px);opacity:0}
+:where([data-fv="concept"]) .cp-steps[data-in="0"] .cp-step:nth-child(3) .cp-ring{transform:translateX(40px);opacity:0}
+:where([data-fv="concept"]) .cp-steps[data-in="0"] .cp-step:nth-child(2) .cp-ring{opacity:0}
+:where([data-fv="concept"]) .cp-step-body{margin-top:clamp(40px,4.4cqw,64px)}
+:where([data-fv="concept"]) .cp-step-ttl{margin:0;font-family:"Noto Sans JP",sans-serif;font-size:clamp(18px,1.5cqw,20px);font-weight:700;line-height:1.5;letter-spacing:.04em;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-step-body .cp-p{margin-top:16px;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-ex{margin-top:24px;padding-top:20px;border-top:1px solid #333}
+:where([data-fv="concept"]) .cp-ex-k{display:block;margin-bottom:12px;font-family:"Avenir","Avenir Next",sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;color:#8A8A8A}
+:where([data-fv="concept"]) .cp-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+:where([data-fv="concept"]) .cp-tags li{padding:6px 14px;border:1px solid #4D4D4D;border-radius:999px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:.04em;color:#D9D9D9}
+:where([data-fv="concept"]) .cp-note{margin:clamp(56px,6cqw,80px) 0 0;font-family:"Noto Sans JP",sans-serif;font-size:12px;line-height:1.8;letter-spacing:.04em;color:#8A8A8A}
+
+/* Related works */
+:where([data-fv="concept"]) .cp-rel{padding-block:clamp(96px,10cqw,140px)}
+:where([data-fv="concept"]) .cp-rel-in{display:flex;justify-content:space-between;align-items:center;gap:32px}
+:where([data-fv="concept"]) .cp-rel .cp-lead-ttl{font-size:clamp(20px,1.9cqw,26px)}
+:where([data-fv="concept"]) .cp-rel .cp-p{margin-top:16px;color:#4D4D4D}
+:where([data-fv="concept"]) .cp-rel .text-link{margin-top:0;font-family:"Avenir","Avenir Next",sans-serif;font-size:15px;font-weight:500;letter-spacing:.12em;color:#1A1A1A}
+
+@container (max-width: 1023px){
+:where([data-fv="concept"]) .cp-msg-copy,:where([data-fv="concept"]) .cp-msg-text{grid-column:1 / -1}
+:where([data-fv="concept"]) .cp-msg-text{margin-top:40px;padding-top:0}
+:where([data-fv="concept"]) .cp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+:where([data-fv="concept"]) .cp-card{padding-block:32px;border-bottom:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-cards{border-top:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-proc .cp-head > div,:where([data-fv="concept"]) .cp-proc .cp-head .cp-p{grid-column:1 / -1}
+:where([data-fv="concept"]) .cp-proc .cp-head .cp-p{margin-top:28px}
+:where([data-fv="concept"]) .cp-ring span{font-size:18px}
+}
+@container (max-width: 767px){
+:where([data-fv="concept"]) .cp-msg{padding-block:64px 96px}
+:where([data-fv="concept"]) .cp-copy{font-size:clamp(26px,7.4cqw,30px)}
+:where([data-fv="concept"]) .cp-fig{margin-top:64px}
+:where([data-fv="concept"]) .cp-fig .t-en{font-size:30px}
+:where([data-fv="concept"]) .cp-fig .t-in-v{font-size:32px;letter-spacing:.1em}
+:where([data-fv="concept"]) .cp-fig .t-ne{font-size:40px}
+:where([data-fv="concept"]) .cp-fig .t-ja,:where([data-fv="concept"]) .cp-fig .t-in-en,:where([data-fv="concept"]) .cp-fig .t-in-ja{display:none}
+:where([data-fv="concept"]) .cp-legend{display:grid;grid-template-columns:1fr}
+:where([data-fv="concept"]) .cp-legend > div{padding:20px 0}
+:where([data-fv="concept"]) .cp-legend > div + div{border-top:1px solid #A6A6A6}
+:where([data-fv="concept"]) .cp-str{padding-bottom:112px}
+:where([data-fv="concept"]) .cp-str .wrap{padding-top:96px}
+:where([data-fv="concept"]) .cp-cards{grid-template-columns:1fr}
+:where([data-fv="concept"]) .cp-card{padding:32px 20px}
+:where([data-fv="concept"]) .cp-proc{padding-block:96px}
+:where([data-fv="concept"]) .cp-proc-ja{font-size:clamp(22px,6.2cqw,28px)}
+:where([data-fv="concept"]) .cp-steps{grid-template-columns:1fr;row-gap:64px}
+:where([data-fv="concept"]) .cp-ring,:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring,:where([data-fv="concept"]) .cp-step:nth-child(3) .cp-ring{width:min(240px,70%);margin-left:0}
+:where([data-fv="concept"]) .cp-ring span{font-size:20px}
+:where([data-fv="concept"]) .cp-step-body{margin-top:32px}
+:where([data-fv="concept"]) .cp-steps::before,:where([data-fv="concept"]) .cp-steps::after{display:none}
+:where([data-fv="concept"]) .cp-step:nth-child(2) .cp-ring{margin-top:0}
+:where([data-fv="concept"]) .cp-step:not(:last-child)::after{content:"";position:absolute;left:calc(min(240px,70%) / 2 - 6px);bottom:-52px;width:12px;height:42px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='42' viewBox='0 0 12 42' fill='none' stroke='%236B6B6B'%3E%3Cpath d='M6 0v38' stroke-dasharray='3 3'/%3E%3Cpath d='M1 33l5 5 5-5'/%3E%3C/svg%3E") no-repeat center/contain}
+:where([data-fv="concept"]) .cp-rel{padding-block:80px}
+:where([data-fv="concept"]) .cp-rel-in{flex-direction:column;align-items:flex-start}
+}
+:where([data-fv="concept"]) .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
