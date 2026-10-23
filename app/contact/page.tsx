@@ -17,7 +17,7 @@ export default function Contact() {
       <section className="wp-hero" aria-labelledby="ctpTitle">
       <div className="wp-art" aria-hidden="true"><svg viewBox="0 0 760 520"><circle className="cc" cx="600" cy="120" r="70"></circle><circle className="ca" cx="300" cy="270" r="190"></circle><circle className="cb" cx="500" cy="270" r="190"></circle></svg></div>
       <div className="wrap">
-      <p className="sec-label"><span className="sec-no" lang="en">04</span><span className="sec-line" aria-hidden="true"></span><span className="sec-ja">お問い合わせ</span></p>
+      <p className="sec-label"><span className="sec-ja">お問い合わせ</span></p>
       <div className="wp-head"><h1 className="wp-title" id="ctpTitle" lang="en">CONTACT</h1><ol className="wp-crumb" lang="en"><li><Link href="/">TOP</Link></li><li aria-current="page">CONTACT</li></ol></div>
       </div>
       </section>
@@ -26,7 +26,7 @@ export default function Contact() {
       <section className="cp-sec cp-light ctp" data-tone="light" aria-labelledby="ctpLead">
       <div className="wrap ctp-grid">
       <div className="ctp-intro">
-      <p className="sec-label"><span className="sec-no" lang="en">01</span><span className="sec-line" aria-hidden="true"></span><span lang="en">MAIL</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">メール</span></p>
+      <p className="sec-label"><span lang="en">MAIL</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">メール</span></p>
       <h2 className="cp-lead-ttl" id="ctpLead">採用・面談に関するご連絡を<br />お待ちしています。</h2>
       <p className="cp-p">ご連絡はメールにて受け付けています。作品やこれまでの経験について、お気軽にお問い合わせください。</p>
       <p className="cp-p ctp-note">ご連絡の際は、会社名・お名前・ご用件をお書き添えください。</p>

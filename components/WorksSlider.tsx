@@ -2,14 +2,12 @@ import Link from "next/link";
 import { toTagArray, toWebp, workThumb, type Work } from "@/lib/microcms";
 
 /** 見出し・スライダー・操作部。動きは SiteFrame 側（initWorksSlider）が付与する */
-export default function WorksSlider({ works, no = "03" }: { works: Work[]; no?: string }) {
+export default function WorksSlider({ works }: { works: Work[] }) {
   const total = String(works.length).padStart(2, "0");
   return (
     <section className="works" id="works" data-tone="light" aria-labelledby="worksTitle">
       <div className="wrap wk-head">
         <h2 className="sec-label" id="worksTitle">
-          <span className="sec-no" lang="en">{no}</span>
-          <span className="sec-line" aria-hidden="true"></span>
           <span lang="en">WORKS</span>
           <span className="sec-bar" aria-hidden="true">|</span>
           <span className="sec-ja">制作実績</span>

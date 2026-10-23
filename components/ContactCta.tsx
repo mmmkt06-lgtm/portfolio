@@ -9,8 +9,6 @@ export default function ContactCta() {
       <div className="wrap ct">
         <div className="ct-text">
           <p className="sec-label">
-            <span className="sec-no" lang="en">04</span>
-            <span className="sec-line" aria-hidden="true"></span>
             <span lang="en">CONTACT</span>
             <span className="sec-bar" aria-hidden="true">|</span>
             <span className="sec-ja">お問い合わせ</span>

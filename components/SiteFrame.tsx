@@ -21,7 +21,7 @@ type Props = {
 };
 
 const NAV = [
-  { key: "concept", href: "/concept/", en: "CONCEPT", ja: "考え方" },
+  { key: "concept", href: "/concept/", en: "CONCEPT", ja: "コンセプト" },
   { key: "about", href: "/about/", en: "PROFILE", ja: "プロフィール" },
   { key: "works", href: "/works/", en: "WORKS", ja: "制作実績" },
   { key: "contact", href: "/contact/", en: "CONTACT", ja: "お問い合わせ" },

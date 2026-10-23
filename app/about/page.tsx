@@ -20,7 +20,7 @@ export default async function About() {
       <section className="wp-hero" aria-labelledby="prTitle">
       <div className="wp-art" aria-hidden="true"><svg viewBox="0 0 760 520"><circle className="cc" cx="600" cy="120" r="70"></circle><circle className="ca" cx="300" cy="270" r="190"></circle><circle className="cb" cx="500" cy="270" r="190"></circle></svg></div>
       <div className="wrap">
-      <p className="sec-label"><span className="sec-no" lang="en">02</span><span className="sec-line" aria-hidden="true"></span><span className="sec-ja">プロフィール</span></p>
+      <p className="sec-label"><span className="sec-ja">プロフィール</span></p>
       <div className="wp-head"><h1 className="wp-title" id="prTitle" lang="en">PROFILE</h1><ol className="wp-crumb" lang="en"><li><Link href="/">TOP</Link></li><li aria-current="page">PROFILE</li></ol></div>
       </div>
       </section>
@@ -30,7 +30,7 @@ export default async function About() {
       <div className="wrap pr-intro">
       <figure className="pr-photo"><div className="pr-img"><img src="/images/profile.jpg" width="800" height="1000" alt="永田幹斗のプロフィール写真" decoding="async" /></div><span className="pr-ring" aria-hidden="true"></span></figure>
       <div className="pr-text">
-      <p className="sec-label"><span className="sec-no" lang="en">01</span><span className="sec-line" aria-hidden="true"></span><span lang="en">ABOUT</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">自己紹介</span></p>
+      <p className="sec-label"><span lang="en">ABOUT</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">自己紹介</span></p>
       <h2 className="pr-name" id="prName"><span lang="en">NAGATA MIKITO</span><small>永田 幹斗</small></h2>
       <p className="pr-role" lang="en">WEB / UI DESIGNER</p>
       <h3 className="pr-lead">設計から表現まで、一貫して考える。</h3>
@@ -47,7 +47,7 @@ export default async function About() {
 
       <section className="cp-sec cp-light pr-sec-pad" data-tone="light" style={{ paddingTop: "clamp(56px,6.5cqw,96px)" }} aria-labelledby="prCareer">
       <div className="wrap">
-      <div className="cp-head pr-car-head"><p className="sec-label"><span className="sec-no" lang="en">02</span><span className="sec-line" aria-hidden="true"></span><span lang="en">CAREER</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">経歴</span></p><h2 className="cp-lead-ttl" id="prCareer">これまでの経歴</h2></div>
+      <div className="cp-head pr-car-head"><p className="sec-label"><span lang="en">CAREER</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">経歴</span></p><h2 className="cp-lead-ttl" id="prCareer">これまでの経歴</h2></div>
       <Timeline>
       <li className="pr-tl-item" data-open="false">
       <span className="pr-tl-dot" aria-hidden="true"></span>
@@ -76,7 +76,7 @@ export default async function About() {
 
       <section className="cp-sec cp-dark pr-sec-pad" aria-labelledby="prSkill">
       <div className="wrap">
-      <div className="cp-head"><p className="sec-label"><span className="sec-no" lang="en">03</span><span className="sec-line" aria-hidden="true"></span><span lang="en">SKILLS</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">できること</span></p><h2 className="cp-lead-ttl" id="prSkill" style={{ color: "#D9D9D9" }}>担当できる領域</h2></div>
+      <div className="cp-head"><p className="sec-label"><span lang="en">SKILLS</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">できること</span></p><h2 className="cp-lead-ttl" id="prSkill" style={{ color: "#D9D9D9" }}>担当できる領域</h2></div>
       <ul className="pr-sk">
       <li className="pr-sk-row"><div className="pr-sk-area"><span className="pr-sk-no" lang="en">01</span><h3 className="pr-sk-ttl">調査・企画</h3><span className="pr-sk-en" lang="en">RESEARCH &amp; PLANNING</span></div><p className="cp-p pr-sk-do">クライアントへのヒアリングを通じて、制作の目的や課題、ターゲットを整理します。競合調査やペルソナ設計などの手法も取り入れながら、ユーザーのニーズを捉えた企画・設計につなげます。</p><div className="pr-sk-meta"><span className="pr-k">対応領域</span><ul className="cp-tags pr-sk-tags"><li>ヒアリング・課題整理</li><li>要件定義</li><li>競合調査</li><li>ペルソナ設計</li></ul></div></li>
       <li className="pr-sk-row"><div className="pr-sk-area"><span className="pr-sk-no" lang="en">02</span><h3 className="pr-sk-ttl">UX・情報設計</h3><span className="pr-sk-en" lang="en">UX &amp; INFORMATION ARCHITECTURE</span></div><p className="cp-p pr-sk-do">ユーザーの視点に立ち、必要な情報やコンテンツを整理します。サイト全体の構造や導線を設計し、目的の情報にたどり着きやすく、直感的に利用できるWebサイトを目指します。</p><div className="pr-sk-meta"><span className="pr-k">対応領域</span><ul className="cp-tags pr-sk-tags"><li>サイトマップ設計</li><li>コンテンツ設計</li><li>導線設計</li><li>ワイヤーフレーム制作</li><li>プロトタイプ制作</li></ul></div></li>

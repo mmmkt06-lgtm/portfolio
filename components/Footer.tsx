@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const NAV = [
-  { href: "/concept/", en: "CONCEPT", ja: "考え方" },
+  { href: "/concept/", en: "CONCEPT", ja: "コンセプト" },
   { href: "/about/", en: "PROFILE", ja: "プロフィール" },
   { href: "/works/", en: "WORKS", ja: "制作実績" },
   { href: "/contact/", en: "CONTACT", ja: "お問い合わせ" },

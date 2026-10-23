@@ -37,8 +37,6 @@ export default async function Works() {
           </div>
           <div className="wrap">
             <p className="sec-label">
-              <span className="sec-no" lang="en">03</span>
-              <span className="sec-line" aria-hidden="true"></span>
               <span className="sec-ja">制作実績</span>
             </p>
             <div className="wp-head">

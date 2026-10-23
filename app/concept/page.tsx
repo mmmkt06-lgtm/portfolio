@@ -19,7 +19,7 @@ export default async function Concept() {
       <section className="wp-hero" aria-labelledby="cpTitle">
       <div className="wp-art" aria-hidden="true"><svg viewBox="0 0 760 520"><circle className="cc" cx="600" cy="120" r="70"></circle><circle className="ca" cx="300" cy="270" r="190"></circle><circle className="cb" cx="500" cy="270" r="190"></circle></svg></div>
       <div className="wrap">
-      <p className="sec-label"><span className="sec-no" lang="en">01</span><span className="sec-line" aria-hidden="true"></span><span className="sec-ja">考え方</span></p>
+      <p className="sec-label"><span className="sec-ja">コンセプト</span></p>
       <div className="wp-head"><h1 className="wp-title" id="cpTitle" lang="en">CONCEPT</h1><ol className="wp-crumb" lang="en"><li><Link href="/">TOP</Link></li><li aria-current="page">CONCEPT</li></ol></div>
       </div>
       </section>
@@ -27,7 +27,7 @@ export default async function Concept() {
 
       <section className="cp-sec cp-light cp-msg" data-tone="light" aria-labelledby="cpMsg">
       <div className="wrap">
-      <div className="cp-head"><p className="sec-label"><span className="sec-no" lang="en">01</span><span className="sec-line" aria-hidden="true"></span><span lang="en">PHILOSOPHY</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">デザインポリシー</span></p></div>
+      <div className="cp-head"><p className="sec-label"><span lang="en">PHILOSOPHY</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">デザインポリシー</span></p></div>
       <div className="cp-msg-grid">
       <div className="cp-msg-copy"><h2 className="cp-copy" id="cpMsg">伝えたいことだけでは、<br />伝わらない。</h2></div>
       <div className="cp-msg-text">
@@ -59,7 +59,7 @@ export default async function Concept() {
 
       <section className="cp-sec cp-dark cp-proc" aria-labelledby="cpProc">
       <div className="wrap">
-      <div className="cp-head"><div><p className="sec-label"><span className="sec-no" lang="en">02</span><span className="sec-line" aria-hidden="true"></span><span lang="en">APPROACH</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">デザインプロセス</span></p>
+      <div className="cp-head"><div><p className="sec-label"><span lang="en">APPROACH</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">デザインプロセス</span></p>
       <h2 className="cp-proc-ttl cp-proc-ja" id="cpProc">理解し、設計し、形にする。</h2></div>
       <p className="cp-p">感覚だけに頼るのではなく、課題の理解から設計、ビジュアル表現まで、一貫した考え方を持ってデザインに取り組みます。</p></div>
       <ol className="cp-steps">

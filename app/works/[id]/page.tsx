@@ -53,8 +53,6 @@ export default async function WorkDetail({ params }: { params: Promise<Params> }
           </div>
           <div className="wrap">
             <p className="sec-label">
-              <span className="sec-no" lang="en">03</span>
-              <span className="sec-line" aria-hidden="true"></span>
               <span className="sec-ja">制作実績</span>
             </p>
             <div className="wp-head">
@@ -97,8 +95,6 @@ export default async function WorkDetail({ params }: { params: Promise<Params> }
               {paragraphs.length > 0 && (
                 <div className="wd-ov">
                   <p className="sec-label">
-                    <span className="sec-no" lang="en">01</span>
-                    <span className="sec-line" aria-hidden="true"></span>
                     <span lang="en">OVERVIEW</span>
                     <span className="sec-bar" aria-hidden="true">|</span>
                     <span className="sec-ja">概要</span>
