@@ -260,7 +260,6 @@
 
 /* Tablet: stack, art below copy, the pair of circles centred */
 @container (max-width: 1023px){
-:where([data-fv="concept"]) .works{background:#D9D9D9}
 :where([data-fv="concept"]) .nav{gap:28px}
 :where([data-fv="concept"]) .fv-body{justify-content:flex-start;padding-top:calc(var(--hd) + 40px)}
 :where([data-fv="concept"]) .fv-copy{padding-bottom:0}
