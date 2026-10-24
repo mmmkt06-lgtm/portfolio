@@ -28,6 +28,7 @@ body { margin: 0; background: #1A1A1A; }
 :where([data-fv]) .hd-sticky { transform: translateZ(0); will-change: transform; backface-visibility: hidden; }
 
 /* identive ロゴ（Figma）：表示サイズ ヘッダー PC186×39 / SP156×33、フッター PC197×41 / SP207×43 */
+:where([data-fv]) .logo svg.lg-mark,:where([data-fv]) .ft-logo svg.lg-mark{overflow:visible}
 :where([data-fv]) .logo svg.lg-mark{width:186px;height:auto;aspect-ratio:186/39;margin-left:1px}
 :where([data-fv]) .ft-logo{color:#D9D9D9}
 :where([data-fv]) .ft-logo svg.lg-mark{width:197px;height:auto;aspect-ratio:186/39;margin-left:1px}
@@ -40,3 +41,7 @@ body { margin: 0; background: #1A1A1A; }
 :where([data-fv]) .ft-copy{font-size:10px;letter-spacing:.144em;line-height:normal}
 :where([data-fv]) .ft-copy small{font-size:inherit}
 @container (max-width: 767px){:where([data-fv]) .ft-copy{max-width:141px}}
+
+/* SPメニュー：開いたときのロゴ・閉じるボタンを、開く前のヘッダーと同じ位置にそろえる */
+:where([data-fv]) .sp-menu .sp-menu-hd{box-sizing:border-box;height:var(--hd);margin-inline:calc(var(--g) * -1);padding-inline:clamp(20px,4.9cqw,70px)}
+:where([data-fv]) .sp-menu-hd .menu-btn{margin-right:8px}
