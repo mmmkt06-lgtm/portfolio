@@ -21,7 +21,7 @@ export default async function Home() {
       <main className="fv-body">
       <div className="wrap fv-copy">
       <div className="copy-inner">
-      <h1><span className="ja">想いとニーズの接点を描く。</span><span className="en-big" lang="en"><span className="ln"><span>DESIGN THE</span></span><span className="ln"><span>CONNECTION.</span></span></span></h1>
+      <h1><span className="ja">想いとニーズの重なる、接点を描く。</span><span className="en-big" lang="en"><span className="ln"><span>DESIGN THE</span></span><span className="ln"><span>CONNECTION.</span></span></span></h1>
       <p className="en-sub" lang="en">Where Different Values Intersect,We Create New Experiences.</p>
       </div>
       </div>
