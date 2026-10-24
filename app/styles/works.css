@@ -349,12 +349,15 @@
 :where([data-fv="works"]) .wp-art .ca{stroke:#D9D9D9;animation:wpA 10.5s ease-in-out infinite alternate}
 :where([data-fv="works"]) .wp-art .cb{stroke:#6B6B6B;animation:wpB 12s ease-in-out infinite alternate}
 :where([data-fv="works"]) .wp-art .cc{stroke:#404040}
+@keyframes wpHint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 @keyframes wpA{to{transform:translate(76px,22px)}}
 @keyframes wpB{to{transform:translate(-76px,-26px)}}
 :where([data-fv="works"]) .wp-list{position:relative;z-index:2;background:#EAEAEA;color:#1A1A1A;--vl:rgba(26,26,26,.06);padding-block:clamp(72px,7.5cqw,112px) clamp(120px,12cqw,180px)}
 :where([data-fv="works"]) .wp-list::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:50%;width:min(1200px,calc(100% - 2 * clamp(20px,4cqw,48px)));transform:translateX(-50%);pointer-events:none;border-right:1px solid var(--vl);background-image:linear-gradient(to right,var(--vl) 1px,transparent 1px);background-size:calc(100% / 3) 100%}
 :where([data-fv="works"]) .wp-list > .wrap{position:relative;z-index:1}
 :where([data-fv="works"]) .wp-bar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:clamp(40px,4.4cqw,64px);padding-bottom:20px;border-bottom:1px solid #A6A6A6}
+:where([data-fv="works"]) .wp-filter-wrap{position:relative;min-width:0}
+:where([data-fv="works"]) .wp-filter-hint{display:none}
 :where([data-fv="works"]) .wp-filter{display:flex;flex-wrap:wrap;gap:4px clamp(24px,3cqw,44px);margin:0;padding:0;list-style:none}
 :where([data-fv="works"]) .wp-filter button{position:relative;box-sizing:border-box;min-height:44px;padding:0 0 0 18px;border:0;background:transparent;color:#4D4D4D;cursor:pointer;font-family:"Avenir","Avenir Next",sans-serif;font-size:13px;font-weight:500;letter-spacing:.12em;white-space:nowrap;transition:color .3s ease}
 :where([data-fv="works"]) .wp-filter button::before{content:"";position:absolute;left:0;top:50%;width:8px;height:8px;margin-top:-4px;border:1px solid currentColor;border-radius:50%;box-sizing:border-box;transform:scale(0);transition:transform .35s cubic-bezier(.22,.61,.36,1),background-color .3s ease}
@@ -394,12 +397,16 @@
 :where([data-fv="works"]) .wp-bar{gap:16px;margin-bottom:40px}
 :where([data-fv="works"]) .wp-filter{flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 20px);margin-right:-20px;padding-bottom:4px;scrollbar-width:none}
 :where([data-fv="works"]) .wp-filter::-webkit-scrollbar{display:none}
+:where([data-fv="works"]) .wp-filter-wrap{width:calc(100% + 20px);margin-right:-20px}
+:where([data-fv="works"]) .wp-filter{width:100%;margin-right:0}
+:where([data-fv="works"]) .wp-filter-hint{position:absolute;right:0;top:0;bottom:4px;display:flex;align-items:center;justify-content:flex-end;width:72px;padding-right:16px;box-sizing:border-box;color:#1A1A1A;background:linear-gradient(90deg,rgba(234,234,234,0),#EAEAEA 60%);pointer-events:none}
+:where([data-fv="works"]) .wp-filter-hint svg{animation:wpHint 1.6s ease-in-out infinite}
 :where([data-fv="works"]) .wp-grid{grid-template-columns:1fr;row-gap:48px}
 :where([data-fv="works"]) .wp-item{grid-column:1 / -1}
 :where([data-fv="works"]) .wp-head{align-items:flex-start;flex-direction:column-reverse;gap:20px}
 :where([data-fv="works"]) .wp-crumb{margin:0}
 }
-@media (prefers-reduced-motion: reduce){:where([data-fv="works"]) .wp-art circle{animation:none}}
+@media (prefers-reduced-motion: reduce){:where([data-fv="works"]) .wp-art circle,:where([data-fv="works"]) .wp-filter-hint svg{animation:none}}
 
 /* SP hero: same design as the Concept / SP frame in Figma */
 @container (max-width: 767px){

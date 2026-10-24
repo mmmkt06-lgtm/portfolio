@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export type WorkCard = {
   id: string;
@@ -22,6 +22,19 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
   const [cat, setCat] = useState("ALL");
   const [page, setPage] = useState(1);
   const topRef = useRef<HTMLDivElement>(null);
+  const filterRef = useRef<HTMLUListElement>(null);
+  const [more, setMore] = useState(false);
+  // SPでカテゴリーが横にはみ出しているあいだだけ、スクロールヒントを出す
+  const checkMore = useCallback(() => {
+    const el = filterRef.current;
+    if (el) setMore(el.scrollLeft + el.clientWidth < el.scrollWidth - 2);
+  }, []);
+  useEffect(() => {
+    checkMore();
+    window.addEventListener("resize", checkMore);
+    document.fonts?.ready.then(checkMore);
+    return () => window.removeEventListener("resize", checkMore);
+  }, [checkMore, cats.length]);
   const shown = works.filter((w) => cat === "ALL" || w.categories.includes(cat));
   const pages = Math.max(1, Math.ceil(shown.length / PER_PAGE));
   const current = Math.min(page, pages);
@@ -36,13 +49,20 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
   return (
     <div className="wrap">
       <div className="wp-bar" ref={topRef}>
-        <ul className="wp-filter" aria-label="カテゴリーで絞り込む">
+        <div className="wp-filter-wrap">
+        <ul className="wp-filter" aria-label="カテゴリーで絞り込む" ref={filterRef} onScroll={checkMore}>
           {["ALL", ...cats].map((c) => (
             <li key={c}>
               <button type="button" aria-pressed={cat === c} onClick={() => { setCat(c); setPage(1); }}>{c}</button>
             </li>
           ))}
         </ul>
+        {more && (
+          <span className="wp-filter-hint" aria-hidden="true">
+            <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" /></svg>
+          </span>
+        )}
+        </div>
         <p className="wp-count" lang="en" aria-live="polite"><b data-n={pad(shown.length)}></b> 件</p>
       </div>
       <ul className="wp-grid">
