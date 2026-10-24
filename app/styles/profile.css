@@ -611,3 +611,7 @@
 :where([data-fv="profile"]) .pr-sk-meta{margin-top:36.7px;gap:0}
 :where([data-fv="profile"]) .pr-sk .pr-sk-meta .pr-k{margin-bottom:0;line-height:14px}
 }
+/* 経歴セクション：背景 #EAEAEA */
+:where([data-fv="profile"]) .pr-career{background:#EAEAEA}
+:where([data-fv="profile"]) .pr-career .pr-tl-dot{background:#EAEAEA}
+:where([data-fv="profile"]) .pr-career .pr-tl-item.is-current .pr-tl-dot{background:#1A1A1A}

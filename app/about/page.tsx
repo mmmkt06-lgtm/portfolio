@@ -45,7 +45,7 @@ export default async function About() {
       </section>
 
 
-      <section className="cp-sec cp-light pr-sec-pad" data-tone="light" style={{ paddingTop: "clamp(56px,6.5cqw,96px)" }} aria-labelledby="prCareer">
+      <section className="cp-sec cp-light pr-sec-pad pr-career" data-tone="light" style={{ paddingTop: "clamp(56px,6.5cqw,96px)" }} aria-labelledby="prCareer">
       <div className="wrap">
       <div className="cp-head pr-car-head"><p className="sec-label"><span lang="en">CAREER</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">経歴</span></p><h2 className="cp-lead-ttl" id="prCareer">これまでの経歴</h2></div>
       <Timeline>
