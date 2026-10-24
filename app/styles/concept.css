@@ -530,7 +530,7 @@
 :where([data-fv="concept"]) .cp-rel{padding-block:80px}
 :where([data-fv="concept"]) .cp-rel-in{flex-direction:column;align-items:flex-start}
 }
-:where([data-fv="concept"]) .cp-svg-sp{display:none}
+@container (min-width: 768px){:where([data-fv="concept"]) .cp-fig svg.cp-svg-sp{display:none}}
 :where([data-fv="concept"]) .cp-svg-sp text{text-anchor:middle}
 :where([data-fv="concept"]) .cp-svg-sp circle,:where([data-fv="concept"]) .cp-svg-sp line{vector-effect:none}
 :where([data-fv="concept"]) .cp-svg-sp .s-en{font-family:"Avenir","Avenir Next",sans-serif;font-size:27.9px;font-weight:500;letter-spacing:.054em;fill:#1A1A1A}
