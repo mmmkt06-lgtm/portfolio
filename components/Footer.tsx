@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const NAV = [
   { href: "/concept/", en: "CONCEPT", ja: "コンセプト" },
@@ -13,12 +14,8 @@ export default function Footer() {
       <div className="wrap">
         <div className="ft-top-row">
           <div>
-            <Link className="ft-logo" href="/" aria-label="ホーム（ロゴは仮）">
-              <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
-                <circle cx="26" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
-              </svg>
-              <span aria-hidden="true">LOGO</span>
+            <Link className="ft-logo" href="/" aria-label="identive ホーム">
+              <Logo />
             </Link>
             <p className="ft-tag">想いとニーズの接点を描く。</p>
           </div>

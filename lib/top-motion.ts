@@ -16,6 +16,7 @@ export function initTopMotion(root: HTMLElement, setLit: (lit: boolean) => void)
   const gA = [q(".inA"), q(".inA .mA")], gB = [q(".inB"), q(".inB .mB")];
   const reduce = !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   let lit: boolean | undefined;
+  let bgEl: Element | null = null;
   let raf = 0;
 
   // ドリフト／導入アニメーションが今かけているオフセット（1440x800空間のpx）
@@ -83,7 +84,7 @@ export function initTopMotion(root: HTMLElement, setLit: (lit: boolean) => void)
     if (top(works) <= hd) next = true;
     if (top(band) <= hd) next = false;
     const lightEl = top(works) <= hd ? works : second;
-    if (next && lightEl) root.style.setProperty("--hd-bg", getComputedStyle(lightEl).backgroundColor);
+    if (next && lightEl && lightEl !== bgEl) { bgEl = lightEl; root.style.setProperty("--hd-bg", getComputedStyle(lightEl).backgroundColor); }
     if (next !== lit) { lit = next; setLit(next); }
   };
   const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };

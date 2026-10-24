@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { initTopMotion, initWorksSlider } from "@/lib/top-motion";
+import Logo from "@/components/Logo";
 import { initCursorView } from "@/lib/cursor-view";
 
 type Frame = { paused: boolean; togglePaused: () => void };
@@ -27,15 +28,6 @@ const NAV = [
   { key: "works", href: "/works/", en: "WORKS", ja: "制作実績" },
   { key: "contact", href: "/contact/", en: "CONTACT", ja: "お問い合わせ" },
 ] as const;
-
-function LogoMark({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" aria-hidden="true" style={style}>
-      <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
-      <circle cx="26" cy="12" r="11" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  );
-}
 
 /** 要素（または最も近い祖先）の不透明な背景色。見つからなければ空文字 */
 function solidBg(el: HTMLElement | null) {
@@ -68,7 +60,7 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
       // ヘッダーは、明るい区間が下にある間だけ暗色にする
       const lights = Array.from(root.querySelectorAll<HTMLElement>('[data-tone="light"]'));
       const band = root.querySelector(".wk-band");
-      let last: boolean | undefined, lastBg = "", raf = 0;
+      let last: boolean | undefined, lastBg = "", lastUnder: HTMLElement | undefined, raf = 0;
       const update = () => {
         const sc = root.getBoundingClientRect().width / (root.offsetWidth || 1) || 1;
         const hd = parseFloat(getComputedStyle(root).getPropertyValue("--hd")) || 100;
@@ -76,8 +68,12 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
         let next = !!under;
         if (next && band && band.getBoundingClientRect().top / sc <= hd) next = false;
         // ヘッダーの背景は、下にある明るい区間の背景色に合わせる
-        const bg = next && under ? solidBg(under) : "";
-        if (bg !== lastBg) { lastBg = bg; if (bg) root.style.setProperty("--hd-bg", bg); }
+        // 背景色の取得はスタイル再計算を伴うので、下の区間が変わったときだけ行う
+        if (next && under && under !== lastUnder) {
+          lastUnder = under;
+          const bg = solidBg(under);
+          if (bg !== lastBg) { lastBg = bg; if (bg) root.style.setProperty("--hd-bg", bg); }
+        }
         if (next !== last) { last = next; setLit(next); }
       };
       const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
@@ -133,10 +129,8 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
           <div className="hd-sticky">
             <header className="hd">
               <div className="hd-in">
-                {/* TODO: 正式なロゴ／名前が届いたら差し替える（現在は仮ロゴ） */}
-                <Link className="logo" href="/" aria-label="ホーム（ロゴは仮）">
-                  <LogoMark />
-                  <span className="logo-word" aria-hidden="true">LOGO</span>
+                <Link className="logo" href="/" aria-label="identive ホーム">
+                  <Logo />
                 </Link>
                 <nav aria-label="メインナビゲーション">
                   <ul className="nav">
@@ -166,9 +160,8 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
               <div className="sp-menu" id="spMenu" role="dialog" aria-modal="true" aria-label="メニュー">
                 <div className="wrap">
                   <div className="sp-menu-hd">
-                    <Link className="logo" href="/" aria-label="ホーム（ロゴは仮）" onClick={() => setMenuOpen(false)}>
-                      <LogoMark style={{ width: 30, height: 20 }} />
-                      <span className="logo-word" aria-hidden="true" style={{ fontSize: 16 }}>LOGO</span>
+                    <Link className="logo" href="/" aria-label="identive ホーム" onClick={() => setMenuOpen(false)}>
+                      <Logo />
                     </Link>
                     <button className="menu-btn" type="button" aria-label="メニューを閉じる" onClick={closeMenu} style={{ display: "inline-flex" }} autoFocus>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" strokeWidth="1.5" /></svg>

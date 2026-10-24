@@ -23,3 +23,12 @@ body { margin: 0; background: #1A1A1A; }
 }
 .cur-view.is-on { opacity: 1; scale: 1; }
 @media (prefers-reduced-motion: reduce) { .cur-view { transition: none; } }
+
+/* スクロール中のヘッダーのガタつき対策：専用レイヤーに載せて、背景の再描画と切り離す */
+:where([data-fv]) .hd-sticky { transform: translateZ(0); will-change: transform; backface-visibility: hidden; }
+
+/* identive ロゴ（Figma）：ヘッダー PC176×37 / SP148×31、フッター 193×41 */
+:where([data-fv]) .logo svg.lg-mark{width:176px;height:auto;aspect-ratio:176/37}
+:where([data-fv]) .ft-logo{color:#D9D9D9}
+:where([data-fv]) .ft-logo svg.lg-mark{width:193px;height:auto;aspect-ratio:176/37}
+@container (max-width: 767px){:where([data-fv]) .logo svg.lg-mark{width:148px}}
