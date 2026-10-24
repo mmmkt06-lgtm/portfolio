@@ -31,7 +31,6 @@ export default function WorksSlider({ works }: { works: Work[] }) {
                           style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
                         />
                       )}
-                      <span className="wk-view" lang="en" aria-hidden="true">VIEW</span>
                     </div>
                     <div className="wk-cap">
                       <p className="wk-client">{w.client}</p>

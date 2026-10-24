@@ -48,10 +48,9 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
       <ul className="wp-grid">
         {visible.map((w) => (
           <li className="wp-item" key={w.id} style={{ "--sp": 6 } as React.CSSProperties}>
-            <Link className="wp-card" href={`/works/${w.id}/`}>
+            <Link className="wp-card" data-cursor="" href={`/works/${w.id}/`}>
               <div className="wp-thumb">
                 {w.image && <img src={w.image.src} width={w.image.width} height={w.image.height} alt={w.title} loading="lazy" decoding="async" />}
-                <span className="wp-view" lang="en" aria-hidden="true">VIEW</span>
               </div>
               <div className="wp-cap">
                 <p className="wp-client">{w.client}</p>

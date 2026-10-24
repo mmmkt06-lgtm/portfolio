@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { initTopMotion, initWorksSlider } from "@/lib/top-motion";
+import { initCursorView } from "@/lib/cursor-view";
 
 type Frame = { paused: boolean; togglePaused: () => void };
 const FrameContext = createContext<Frame>({ paused: false, togglePaused: () => {} });
@@ -106,6 +107,7 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
     }
 
     cleanups.push(initWorksSlider(root));
+    cleanups.push(initCursorView(root));
 
     const pt = root.querySelector<HTMLElement>(".ft-pt");
     const toTop = () => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });

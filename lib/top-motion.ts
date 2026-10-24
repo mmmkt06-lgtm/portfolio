@@ -111,7 +111,9 @@ export function initWorksSlider(root: HTMLElement): () => void {
     tr.style.setProperty("--i", String(idx));
     slides.forEach((s, k) => {
       if (k === idx) s.setAttribute("data-active", ""); else s.removeAttribute("data-active");
-      s.querySelector("a")?.setAttribute("tabindex", k === idx ? "0" : "-1");
+      const a = s.querySelector("a");
+      a?.setAttribute("tabindex", k === idx ? "0" : "-1");
+      a?.toggleAttribute("data-cursor", k === idx);
     });
     cur?.setAttribute("data-n", String(idx + 1).padStart(2, "0"));
     bar?.style.setProperty("--p", String((idx + 1) / n));
