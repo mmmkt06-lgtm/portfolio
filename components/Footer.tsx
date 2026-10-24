@@ -17,7 +17,7 @@ export default function Footer() {
             <Link className="ft-logo" href="/" aria-label="identive ホーム">
               <Logo />
             </Link>
-            <p className="ft-tag">想いとニーズの接点を描く。</p>
+            <p className="ft-tag">想いとニーズの重なる、接点を描く。</p>
           </div>
           <nav aria-label="フッターナビゲーション">
             <ul className="ft-nav">
