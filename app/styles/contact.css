@@ -388,6 +388,8 @@
 :where([data-fv="contactp"]) .ctf-g{display:grid;gap:12px;min-width:0;margin:0;padding:0;border:0}
 :where([data-fv="contactp"]) .ctf-g + .ctf-g{margin-top:var(--gap)}
 :where([data-fv="contactp"]) .ctf-lb{display:flex;align-items:center;gap:12px;height:20px;padding:0;font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:700;line-height:20px;letter-spacing:.06em;color:#1A1A1A}
+:where([data-fv="contactp"]) .ctf-set{display:block}
+:where([data-fv="contactp"]) .ctf-set .ctf-lb{margin-bottom:12px}
 :where([data-fv="contactp"]) .ctf-bd{box-sizing:border-box;display:inline-flex;align-items:center;height:20px;padding:0 7px;border:1px solid #1A1A1A;border-radius:2px;background:#1A1A1A;font-size:11px;font-weight:500;line-height:1;letter-spacing:.08em;color:#D9D9D9}
 :where([data-fv="contactp"]) .ctf-bd.opt{background:transparent;border-color:#8A8A8A;color:#4D4D4D}
 :where([data-fv="contactp"]) .ctf-note{font-size:12px;font-weight:400;line-height:17.5px;letter-spacing:.06em;color:#4D4D4D}
