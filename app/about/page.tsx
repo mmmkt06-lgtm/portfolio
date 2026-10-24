@@ -32,7 +32,7 @@ export default async function About() {
       <div className="pr-text">
       <p className="sec-label"><span lang="en">ABOUT</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">自己紹介</span></p>
       <h2 className="pr-name" id="prName"><span lang="en">NAGATA MIKITO</span><small>永田 幹斗</small></h2>
-      <p className="pr-role" lang="en">WEB / UI DESIGNER</p>
+      <p className="pr-role" lang="en">WEB DIRECTOR / WEB DESIGNER</p>
       <h3 className="pr-lead">設計から表現まで、一貫して考える。</h3>
       <div className="pr-bio-wrap">
       <p className="cp-p pr-bio">1996年生まれ福岡出身のWebデザイナーです。</p>
