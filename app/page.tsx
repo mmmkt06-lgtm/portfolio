@@ -10,7 +10,7 @@ import "./styles/top.css";
 
 export const metadata: Metadata = { title: { absolute: "PORTFOLIO | 想いとニーズの接点を描く。" } };
 
-const REVEAL: [string, number][] = [[".dg", 0.45], [".pf", 0.3]];
+const REVEAL: [string, number][] = [[".c-fig", 0.45], [".pf", 0.3]];
 
 export default async function Home() {
   const works = (await getWorks(6)).slice(0, 6);
@@ -74,7 +74,7 @@ export default async function Home() {
       </div>
       </div>
       <div className="c-fig">
-      <svg className="dg" viewBox="0 0 640 400" aria-hidden="true" focusable="false">
+      <svg className="dg dg-pc" viewBox="0 0 640 400" aria-hidden="true" focusable="false">
       <defs>
       <clipPath id="dgClipL"><circle className="dg-L" cx="215" cy="200" r="170"></circle></clipPath>
       <clipPath id="dgClipR"><circle className="dg-R" cx="425" cy="200" r="170"></circle></clipPath>
@@ -86,6 +86,19 @@ export default async function Home() {
       <g className="dg-L"><line className="dg-axis" x1="26.5" y1="199" x2="92.2" y2="199"></line><line className="dg-axis" x1="178.8" y1="199" x2="278.5" y2="199"></line><path className="dg-arrow" d="M274.4 192l8 7-8 7"></path><text className="dg-en" x="135" y="205" textAnchor="middle">Intention</text><text className="dg-ja" x="135" y="232" textAnchor="middle">想い</text></g>
       <g className="dg-R"><line className="dg-axis" x1="465.9" y1="199" x2="360.7" y2="199"></line><line className="dg-axis" x1="542.5" y1="199" x2="608.2" y2="199"></line><path className="dg-arrow" d="M365.6 192l-8 7 8 7"></path><text className="dg-en" x="505" y="205" textAnchor="middle">Needs</text><text className="dg-ja" x="505" y="232" textAnchor="middle">ニーズ</text></g>
       <g className="dg-mid"><text className="dg-en" x="320" y="205" textAnchor="middle">Design</text><text className="dg-ja" x="320" y="232" textAnchor="middle">接点</text></g>
+      </svg>
+      <svg className="dg dg-sp" viewBox="0 0 336 207.6" aria-hidden="true" focusable="false">
+      <defs>
+      <clipPath id="dgClipLs"><circle className="dg-L" cx="104" cy="103.8" r="103.8"></circle></clipPath>
+      <clipPath id="dgClipRs"><circle className="dg-R" cx="232.2" cy="103.8" r="103.8"></circle></clipPath>
+      </defs>
+      <circle className="dg-c dg-L" cx="104" cy="103.8" r="103.8"></circle>
+      <circle className="dg-c dg-R" cx="232.2" cy="103.8" r="103.8"></circle>
+      <g style={{ clipPath: "url(#dgClipRs)" }}><circle className="dg-edge dg-L" cx="104" cy="103.8" r="103.8"></circle></g>
+      <g style={{ clipPath: "url(#dgClipLs)" }}><circle className="dg-edge dg-R" cx="232.2" cy="103.8" r="103.8"></circle></g>
+      <g className="dg-L"><line className="dg-axis" x1="0" y1="102.7" x2="35.9" y2="102.7"></line><line className="dg-axis" x1="110.9" y1="102.7" x2="138.6" y2="102.7"></line><path className="dg-arrow" d="M136.2 98.9l4.9 4.3-4.9 4.3"></path><text className="dg-en" x="73.4" y="107.8" textAnchor="middle">Intention</text><text className="dg-ja" x="73.4" y="131.4" textAnchor="middle">想い</text></g>
+      <g className="dg-R"><line className="dg-axis" x1="197.2" y1="102.7" x2="224.9" y2="102.7"></line><line className="dg-axis" x1="287.6" y1="103.2" x2="334.6" y2="103.2"></line><path className="dg-arrow" d="M200.1 98.9l-4.9 4.3 4.9 4.3"></path><text className="dg-en" x="256.7" y="107.8" textAnchor="middle">Needs</text><text className="dg-ja" x="256.2" y="131.4" textAnchor="middle">ニーズ</text></g>
+      <g className="dg-mid"><text className="dg-en" x="167.9" y="107.8" textAnchor="middle">Design</text><text className="dg-ja" x="162.8" y="131.4" textAnchor="middle">接点</text></g>
       </svg>
       </div>
       </div>
