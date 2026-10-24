@@ -35,3 +35,8 @@ body { margin: 0; background: #1A1A1A; }
   :where([data-fv]) .logo svg.lg-mark{width:156px;margin-left:1px}
   :where([data-fv]) .ft-logo svg.lg-mark{width:207px;margin-left:-1px}
 }
+
+/* コピーライト（Figma）：10px / 字間 1.44px。SP は 141px 幅で折り返す */
+:where([data-fv]) .ft-copy{font-size:10px;letter-spacing:.144em;line-height:normal}
+:where([data-fv]) .ft-copy small{font-size:inherit}
+@container (max-width: 767px){:where([data-fv]) .ft-copy{max-width:141px}}

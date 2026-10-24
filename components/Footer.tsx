@@ -30,7 +30,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="ft-bottom">
-          <p className="ft-copy" lang="en"><small>© 2026 NAGATA MIKITO</small></p>
+          <p className="ft-copy" lang="en"><small>Copyright 2026© IDENTIVE All rights reserved.</small></p>
           <button type="button" className="ft-pt" lang="en">
             PAGE TOP
             <i aria-hidden="true">
