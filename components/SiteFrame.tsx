@@ -125,7 +125,7 @@ export default function SiteFrame({ fv, mode = "tone", reveal = [], current, chi
   return (
     <FrameContext.Provider value={{ paused, togglePaused }}>
       <div data-fv={fv}>
-        <div className={cls} ref={rootRef} style={{ "--dur": "14s" } as React.CSSProperties}>
+        <div className={cls} ref={rootRef} style={{ "--dur": fv === "main" ? "9s" : "14s" } as React.CSSProperties}>
           <div className="hd-sticky">
             <header className="hd">
               <div className="hd-in">
