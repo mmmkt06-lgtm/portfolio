@@ -24,6 +24,7 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
   const topRef = useRef<HTMLDivElement>(null);
   const filterRef = useRef<HTMLUListElement>(null);
   const [more, setMore] = useState(false);
+  const [touched, setTouched] = useState(false);
   // SPでカテゴリーが横にはみ出しているあいだだけ、スクロールヒントを出す
   const checkMore = useCallback(() => {
     const el = filterRef.current;
@@ -50,7 +51,7 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
     <div className="wrap">
       <div className="wp-bar" ref={topRef}>
         <div className="wp-filter-wrap">
-        <ul className="wp-filter" aria-label="カテゴリーで絞り込む" ref={filterRef} onScroll={checkMore}>
+        <ul className="wp-filter" aria-label="カテゴリーで絞り込む" ref={filterRef} onScroll={() => { checkMore(); if ((filterRef.current?.scrollLeft ?? 0) > 4) setTouched(true); }} onPointerDown={() => setTouched(true)}>
           {["ALL", ...cats].map((c) => (
             <li key={c}>
               <button type="button" aria-pressed={cat === c} onClick={() => { setCat(c); setPage(1); }}>{c}</button>
@@ -60,6 +61,15 @@ export default function WorksGrid({ works }: { works: WorkCard[] }) {
         {more && (
           <span className="wp-filter-hint" aria-hidden="true">
             <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" /></svg>
+          </span>
+        )}
+        {more && !touched && (
+          <span className="wp-filter-guide" aria-hidden="true">
+            <svg width="58" height="68" viewBox="0 0 44 52" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 8H1M1 8l3-3M1 8l3 3M39 8h4M43 8l-3-3M43 8l-3 3" />
+              <g className="hand"><path d="M15 31V12.5a4.5 4.5 0 0 1 9 0V27M24 25a4 4 0 0 1 8 0v3M32 27a4 4 0 0 1 7 2.5V37c0 8-5 13-13 13h-3c-5 0-8-2.5-10.5-6.5L6 34.5a3.6 3.6 0 0 1 6-3.8L15 34" /></g>
+            </svg>
+            <span>スクロールできます</span>
           </span>
         )}
         </div>
