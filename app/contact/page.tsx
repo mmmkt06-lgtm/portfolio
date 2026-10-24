@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFrame from "@/components/SiteFrame";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import "../styles/contact.css";
 
-export const metadata: Metadata = { title: "CONTACT", description: "採用・面談・選考に関するご連絡はこちら。" };
+export const metadata: Metadata = { title: "CONTACT", description: "お問い合わせ・ご相談はこちらのフォームから。" };
 
-const REVEAL: [string, number][] = [[".ctp-grid", 0.2]];
+const REVEAL: [string, number][] = [[".ctf-wrap", 0.1]];
 
 export default function Contact() {
   // 公開用メールアドレスが未設定の間は、メール導線（mailto）を出さない
@@ -23,34 +24,12 @@ export default function Contact() {
       </section>
 
 
-      <section className="cp-sec cp-light ctp" data-tone="light" aria-labelledby="ctpLead">
-      <div className="wrap ctp-grid">
-      <div className="ctp-intro">
-      <p className="sec-label"><span lang="en">MAIL</span><span className="sec-bar" aria-hidden="true">|</span><span className="sec-ja">メール</span></p>
-      <h2 className="cp-lead-ttl" id="ctpLead">採用・面談に関するご連絡を<br />お待ちしています。</h2>
-      <p className="cp-p">ご連絡はメールにて受け付けています。作品やこれまでの経験について、お気軽にお問い合わせください。</p>
-      <p className="cp-p ctp-note">ご連絡の際は、会社名・お名前・ご用件をお書き添えください。</p>
-      </div>
-      <div className="ctp-main">
-      <div className="ctp-mail">
-      <span className="ctp-k" lang="en">E-MAIL</span>
-      {email ? <p className="ctp-addr" lang="en">{email}</p> : <p className="ctp-addr"><span className="ph">公開用メールアドレス未設定</span></p>}
-      {email && (<div className="ctp-act">
-      <a className="ctp-btn" href={`mailto:${email}`} aria-label="メールを作成する"><span className="ctp-ring a" aria-hidden="true"></span><span className="ctp-ring b" aria-hidden="true"></span><span className="ctp-in">メールを作成<svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2"></path></svg></span></a>
-      <p className="cp-p">メールアプリが開きます。</p>
-      </div>)}
-      </div>
-      </div>
-      </div>
-      </section>
-
-
-      <section className="cp-sec cp-light ctp-next" data-tone="light" aria-label="ほかのページ">
-      <div className="wrap">
-      <ul>
-      <li><Link href="/works/"><span><b lang="en">WORKS</b><small>制作実績を見る</small></span><svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2"></path></svg></Link></li>
-      <li><Link href="/about/"><span><b lang="en">PROFILE</b><small>プロフィールを見る</small></span><svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2"></path></svg></Link></li>
-      </ul>
+      <section className="cp-sec cp-light ctf" data-tone="light" aria-labelledby="ctfTitle">
+      <div className="wrap ctf-wrap">
+      <h2 className="ctf-ttl" id="ctfTitle">お問い合わせについて</h2>
+      <p className="ctf-lead">制作に関するご相談など、各種お問い合わせは以下のフォームよりお願いいたします。</p>
+      <p className="ctf-lead">お問い合わせ内容を確認のうえ、返信いたします。</p>
+      <ContactForm email={email} />
       </div>
       </section>
       </main>
