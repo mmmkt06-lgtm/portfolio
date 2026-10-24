@@ -402,6 +402,9 @@
 :where([data-fv="works"]) .wp-filter-wrap{width:calc(100% + 20px);margin-right:-20px}
 :where([data-fv="works"]) .wp-filter{width:100%;margin-right:0}
 :where([data-fv="works"]) .wp-filter-hint{position:absolute;right:0;top:0;bottom:4px;display:flex;align-items:center;justify-content:flex-end;width:72px;padding-right:16px;box-sizing:border-box;color:#1A1A1A;background:linear-gradient(90deg,rgba(234,234,234,0),#EAEAEA 60%);pointer-events:none}
+:where([data-fv="works"]) .wp-filter{gap:4px 0}
+:where([data-fv="works"]) .wp-filter button{min-width:44px;padding-right:24px}
+:where([data-fv="works"]) .wp-filter li:last-child{padding-right:40px}
 :where([data-fv="works"]) .wp-filter-hint svg{animation:wpHint 1.6s ease-in-out infinite}
 :where([data-fv="works"]) .wp-filter-guide{position:absolute;left:50%;top:50%;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 24px 14px;border-radius:14px;background:rgba(26,26,26,.78);color:#FFFFFF;transform:translate(-50%,-50%);pointer-events:none;font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;white-space:nowrap;animation:wpGuideIn .5s ease both}
 :where([data-fv="works"]) .wp-filter-guide .hand{animation:wpHand 1.8s ease-in-out infinite}
