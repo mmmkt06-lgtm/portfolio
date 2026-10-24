@@ -236,15 +236,15 @@
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes inA{from{opacity:0;transform:translate(-120px,36px)}to{opacity:1;transform:none}}
 @keyframes inB{from{opacity:0;transform:translate(120px,-36px)}to{opacity:1;transform:none}}
-@keyframes dA{to{transform:translate(42px,10px)}}
-@keyframes dB{to{transform:translate(-42px,-14px)}}
-@keyframes dC{to{transform:translate(-14px,-40px)}}
-@keyframes dS1{to{transform:translate(18px,26px)}}
-@keyframes dS2{to{transform:translate(-22px,-16px)}}
-@keyframes dS3{to{transform:translate(10px,22px)}}
-@keyframes dN1{to{transform:translate(-64px,42px)}}
-@keyframes dN2{to{transform:translate(-38px,34px)}}
-@keyframes dN3{to{transform:translate(-50px,-46px)}}
+@keyframes dA{to{transform:translate(90px,22px)}}
+@keyframes dB{to{transform:translate(-90px,-30px)}}
+@keyframes dC{to{transform:translate(-30px,-86px)}}
+@keyframes dS1{to{transform:translate(40px,56px)}}
+@keyframes dS2{to{transform:translate(-48px,-34px)}}
+@keyframes dS3{to{transform:translate(22px,48px)}}
+@keyframes dN1{to{transform:translate(-130px,86px)}}
+@keyframes dN2{to{transform:translate(-80px,70px)}}
+@keyframes dN3{to{transform:translate(-105px,-96px)}}
 :where([data-fv="main"]) .is-paused .stage *,:where([data-fv="main"]) .is-paused .stage *::after,:where([data-fv="main"]) .stage[data-zooming="1"] *{animation-play-state:paused !important}
 
 /* Reduced motion: no zoom, no drift; the second view simply follows the FV */
